@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#0b0b14">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Carlos Mentor">
+<title>Carlos Mentor AI 2026</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' rx='52' fill='%23080d08'/%3E%3Cpath d='M168 60 A80 80 0 1 0 168 196' fill='none' stroke='%235ccfb0' stroke-width='14' stroke-linecap='round'/%3E%3Crect x='160' y='52' width='20' height='7' rx='3' fill='%235ccfb0'/%3E%3Crect x='160' y='197' width='20' height='7' rx='3' fill='%235ccfb0'/%3E%3Cg transform='translate(88,80) rotate(-30)'%3E%3Cellipse cx='0' cy='0' rx='8' ry='20' fill='%235ccfb0'/%3E%3Cpolygon points='0,-26 -6,-9 6,-9' fill='%235ccfb0'/%3E%3Cpolygon points='0,22 -5,32 5,32' fill='%23f7b26a'/%3E%3C/g%3E%3Cg transform='translate(158,138)'%3E%3Cpath d='M-13,-11 Q-13,-20 0,-20 Q13,-20 13,-11 Q13,-4 7,2 Q7,7 4,7 L-4,7 Q-7,7 -7,2 Q-13,-4 -13,-11Z' fill='none' stroke='%235ccfb0' stroke-width='2'/%3E%3Cline x1='-4' y1='7' x2='-4' y2='13' stroke='%235ccfb0' stroke-width='2'/%3E%3Cline x1='4' y1='7' x2='4' y2='13' stroke='%235ccfb0' stroke-width='2'/%3E%3Cline x1='-4' y1='13' x2='4' y2='13' stroke='%235ccfb0' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' rx='52' fill='%23080d08'/%3E%3Cpath d='M168 60 A80 80 0 1 0 168 196' fill='none' stroke='%235ccfb0' stroke-width='14' stroke-linecap='round'/%3E%3Crect x='160' y='52' width='20' height='7' rx='3' fill='%235ccfb0'/%3E%3Crect x='160' y='197' width='20' height='7' rx='3' fill='%235ccfb0'/%3E%3Cg transform='translate(88,80) rotate(-30)'%3E%3Cellipse cx='0' cy='0' rx='8' ry='20' fill='%235ccfb0'/%3E%3Cpolygon points='0,-26 -6,-9 6,-9' fill='%235ccfb0'/%3E%3Cpolygon points='0,22 -5,32 5,32' fill='%23f7b26a'/%3E%3C/g%3E%3Cg transform='translate(158,138)'%3E%3Cpath d='M-13,-11 Q-13,-20 0,-20 Q13,-20 13,-11 Q13,-4 7,2 Q7,7 4,7 L-4,7 Q-7,7 -7,2 Q-13,-4 -13,-11Z' fill='none' stroke='%235ccfb0' stroke-width='2'/%3E%3Cline x1='-4' y1='7' x2='-4' y2='13' stroke='%235ccfb0' stroke-width='2'/%3E%3Cline x1='4' y1='7' x2='4' y2='13' stroke='%235ccfb0' stroke-width='2'/%3E%3Cline x1='-4' y1='13' x2='4' y2='13' stroke='%235ccfb0' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root {
+  --bg:#0b0b14;--bg2:#111120;--bg3:#181830;--card:#1a1a2e;
+  --border:rgba(255,255,255,0.07);--accent:#7c6af7;--accent2:#5ccfb0;
+  --accent3:#f7b26a;--danger:#f06a6a;--text:#f0f0ff;--muted:#7a7a9a;
+  --radius:16px;--fh:'Syne',sans-serif;--fb:'Space Grotesk',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--fb);overflow:hidden}
+body{display:flex;flex-direction:column}
+
+#header{background:linear-gradient(135deg,#0f0f24,#1a0a30);padding:14px 16px 10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-shrink:0;position:relative}
+#header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent)}
+.avatar{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;font-size:15px;flex-shrink:0}
+.header-info{flex:1}
+.header-name{font-family:var(--fh);font-size:15px;font-weight:700}
+.header-sub{font-size:11px;color:var(--muted)}
+#sync-indicator{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.sync-dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+.sync-dot.ok{background:var(--accent2)}
+.sync-dot.err{background:var(--danger)}
+.sync-dot.loading{background:var(--accent3);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+#nav{display:flex;background:var(--bg2);border-bottom:1px solid var(--border);overflow-x:auto;flex-shrink:0;scrollbar-width:none}
+#nav::-webkit-scrollbar{display:none}
+.nav-btn{flex:1;min-width:60px;padding:9px 6px;background:none;border:none;color:var(--muted);font-family:var(--fb);font-size:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:all .2s;border-bottom:2px solid transparent}
+.nav-btn .ic{font-size:17px}
+.nav-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+#main{flex:1;overflow-y:auto;overflow-x:hidden}
+.tab{display:none;padding:14px}
+.tab.active{display:block}
+
+.greeting-card{background:linear-gradient(135deg,#16163a,#1e1060);border:1px solid rgba(124,106,247,.2);border-radius:var(--radius);padding:18px;margin-bottom:14px;position:relative;overflow:hidden}
+.greeting-card::before{content:'🚀';font-size:60px;position:absolute;right:-8px;top:50%;transform:translateY(-50%);opacity:.12}
+.greeting-title{font-family:var(--fh);font-size:21px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:3px}
+.greeting-verse{font-size:11px;color:var(--accent2);font-style:italic;margin-top:7px;border-left:2px solid var(--accent2);padding-left:7px}
+
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.stat-value{font-family:var(--fh);font-size:26px;font-weight:800}
+.stat-label{font-size:10px;color:var(--muted);margin-top:1px}
+.stat-card.purple .stat-value{color:var(--accent)}
+.stat-card.teal .stat-value{color:var(--accent2)}
+.stat-card.amber .stat-value{color:var(--accent3)}
+.stat-card.red .stat-value{color:var(--danger)}
+
+.section-title{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;margin-top:3px}
+.week-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:9px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s}
+.week-card:active{transform:scale(.98)}
+.week-badge{width:42px;height:42px;border-radius:9px;background:linear-gradient(135deg,var(--accent),#a855f7);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:13px;font-weight:800;flex-shrink:0}
+.week-info{flex:1}
+.week-name{font-size:13px;font-weight:600;margin-bottom:1px}
+.week-desc{font-size:11px;color:var(--muted)}
+
+.progress-wrap{margin-bottom:14px}
+.progress-bar-bg{height:5px;background:var(--bg3);border-radius:99px;overflow:hidden}
+.progress-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .6s ease}
+.progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+
+.task-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px 13px;margin-bottom:7px;display:flex;align-items:center;gap:9px;cursor:pointer}
+.task-check{width:21px;height:21px;border-radius:6px;border:2px solid var(--muted);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:12px}
+.task-check.done{background:var(--accent2);border-color:var(--accent2)}
+.task-text{flex:1;font-size:13px}
+.task-text.done{text-decoration:line-through;color:var(--muted)}
+.task-tag{font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(124,106,247,.15);color:var(--accent);border:1px solid rgba(124,106,247,.2);white-space:nowrap}
+
+/* CALENDAR */
+.month-header{font-family:var(--fh);font-size:19px;font-weight:800;text-align:center;margin-bottom:3px}
+.month-sub{text-align:center;color:var(--muted);font-size:12px;margin-bottom:14px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:14px}
+.cal-day-name{text-align:center;font-size:9px;color:var(--muted);padding:3px;text-transform:uppercase}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:7px;font-size:12px;background:var(--card);border:1px solid var(--border)}
+.cal-day.today{background:var(--accent);color:white;border-color:var(--accent);font-weight:700}
+.cal-day.past{opacity:.35}
+.cal-day.empty{background:transparent;border-color:transparent}
+
+/* ALARM */
+.alarm-hero{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:14px}
+.alarm-clock{font-family:var(--fh);font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-2px}
+.alarm-date{color:var(--muted);font-size:13px;margin-bottom:14px}
+.alarm-item{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:13px 15px;margin-bottom:7px;display:flex;align-items:center;gap:10px}
+.alarm-time{font-family:var(--fh);font-size:22px;font-weight:700;flex:1}
+.alarm-label{font-size:11px;color:var(--muted)}
+.alarm-toggle{width:42px;height:22px;border-radius:11px;background:var(--bg2);border:1px solid var(--border);cursor:pointer;position:relative;transition:background .2s;flex-shrink:0}
+.alarm-toggle.on{background:var(--accent);border-color:var(--accent)}
+.alarm-toggle::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;background:white;border-radius:50%;transition:left .2s}
+.alarm-toggle.on::after{left:22px}
+.add-alarm-btn{width:100%;padding:13px;background:rgba(124,106,247,.1);border:1px dashed rgba(124,106,247,.3);border-radius:12px;color:var(--accent);font-family:var(--fb);font-size:13px;cursor:pointer;text-align:center;margin-top:3px}
+
+/* SETTINGS */
+.settings-section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px}
+.settings-section h3{font-family:var(--fh);font-size:14px;font-weight:700;margin-bottom:10px}
+.settings-row{margin-bottom:10px}
+.settings-row label{font-size:12px;color:var(--muted);margin-bottom:5px;display:block}
+.settings-input{width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--fb);font-size:13px;outline:none}
+.settings-input:focus{border-color:var(--accent)}
+.ai-selector{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.ai-option{padding:12px 8px;background:var(--bg3);border:2px solid var(--border);border-radius:10px;text-align:center;cursor:pointer;transition:all .2s}
+.ai-option.selected{border-color:var(--accent);background:rgba(124,106,247,.1)}
+.ai-option .ai-icon{font-size:22px;margin-bottom:4px}
+.ai-option .ai-name{font-size:12px;font-weight:600}
+.ai-option .ai-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.save-btn{width:100%;padding:12px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#a855f7);border:none;color:white;font-family:var(--fh);font-size:15px;font-weight:700;cursor:pointer;transition:all .15s}
+.save-btn:active{transform:scale(.97)}
+.status-msg{font-size:12px;text-align:center;margin-top:7px;min-height:18px}
+
+/* AMBER */
+.amber-hero{background:linear-gradient(135deg,#1a0030,#0d1a20);border:1px solid rgba(92,207,176,.2);border-radius:var(--radius);padding:18px;margin-bottom:14px;text-align:center}
+.amber-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#7c6af7,#5ccfb0);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:32px;border:3px solid rgba(92,207,176,.4)}
+.amber-name{font-family:var(--fh);font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.metric-row{display:flex;gap:7px;margin-top:12px}
+.metric-pill{flex:1;padding:9px 7px;background:rgba(255,255,255,.05);border-radius:9px;text-align:center;border:1px solid var(--border)}
+.metric-num{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--accent2)}
+.metric-lbl{font-size:10px;color:var(--muted)}
+
+/* CHAT */
+#chat-tab{display:none;flex-direction:column;padding:0}
+#chat-tab.active{display:flex;height:calc(100vh - 116px)}
+#messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.msg{display:flex;flex-direction:column;max-width:86%}
+.msg.user{align-self:flex-end;align-items:flex-end}
+.msg.assistant{align-self:flex-start;align-items:flex-start}
+.msg-bubble{padding:9px 13px;border-radius:15px;font-size:14px;line-height:1.5}
+.msg.user .msg-bubble{background:var(--accent);border-bottom-right-radius:3px}
+.msg.assistant .msg-bubble{background:var(--card);border:1px solid var(--border);border-bottom-left-radius:3px}
+.msg-time{font-size:10px;color:var(--muted);margin-top:3px;padding:0 3px}
+.chat-locked{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center}
+.chat-locked .lock-icon{font-size:48px}
+.chat-locked p{font-size:13px;color:var(--muted);line-height:1.6}
+.chat-locked button{padding:11px 24px;border-radius:10px;background:var(--accent);border:none;color:white;font-family:var(--fh);font-size:14px;font-weight:600;cursor:pointer}
+#chat-bar{display:flex;gap:7px;padding:10px 14px;border-top:1px solid var(--border);background:var(--bg2);flex-shrink:0}
+#chat-input{flex:1;padding:9px 13px;background:var(--bg3);border:1px solid var(--border);border-radius:11px;color:var(--text);font-family:var(--fb);font-size:13px;resize:none;max-height:110px;outline:none}
+#send-btn{width:40px;height:40px;border-radius:11px;background:var(--accent);border:none;cursor:pointer;font-size:17px;flex-shrink:0;transition:all .15s;color:white;display:flex;align-items:center;justify-content:center}
+#send-btn:active{transform:scale(.92)}
+#send-btn:disabled{opacity:.4}
+.typing-indicator{display:flex;align-items:center;gap:4px;padding:6px 2px}
+.typing-dot{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bounce 1.2s ease infinite}
+.typing-dot:nth-child(2){animation-delay:.2s}
+.typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+
+/* AI BADGE */
+.ai-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;padding:3px 8px;border-radius:99px;margin-bottom:5px}
+.ai-badge.openai{background:rgba(16,163,127,.15);color:#10a37f;border:1px solid rgba(16,163,127,.25)}
+.ai-badge.abacus{background:rgba(247,178,106,.15);color:var(--accent3);border:1px solid rgba(247,178,106,.25)}
+
+/* MODAL */
+#alarm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:100;align-items:flex-end;backdrop-filter:blur(4px)}
+#alarm-modal.open{display:flex}
+.modal-sheet{width:100%;background:var(--bg2);border-radius:20px 20px 0 0;padding:18px;border-top:1px solid var(--border);animation:slideUp .3s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{width:32px;height:3px;background:var(--border);border-radius:2px;margin:0 auto 14px}
+.modal-title{font-family:var(--fh);font-size:17px;font-weight:700;margin-bottom:14px}
+.time-picker{display:flex;gap:7px;margin-bottom:14px}
+.time-part{flex:1}
+.time-part label{font-size:11px;color:var(--muted);margin-bottom:4px;display:block}
+.time-input{width:100%;padding:11px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--fh);font-size:22px;font-weight:700;text-align:center}
+.label-input{width:100%;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--fb);font-size:13px;margin-bottom:14px}
+.modal-save{width:100%;padding:13px;border-radius:11px;background:linear-gradient(135deg,var(--accent),#a855f7);border:none;color:white;font-family:var(--fh);font-size:15px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div id="header">
+  <div class="avatar">C</div>
+  <div class="header-info">
+    <div class="header-name">Carlos Alberto 🔥</div>
+    <div class="header-sub">Plano de Vida 2026</div>
+  </div>
+  <div id="sync-indicator">
+    <div class="sync-dot" id="sync-dot"></div>
+    <span id="sync-text">local</span>
+  </div>
+</div>
+
+<nav id="nav">
+  <button class="nav-btn active" onclick="switchTab('dash')"><span class="ic">🏠</span>Dashboard</button>
+  <button class="nav-btn" onclick="switchTab('cal')"><span class="ic">📅</span>Calendário</button>
+  <button class="nav-btn" onclick="switchTab('alarm')"><span class="ic">⏰</span>Alarmes</button>
+  <button class="nav-btn" onclick="switchTab('amber')"><span class="ic">🎮</span>Amber</button>
+  <button class="nav-btn" onclick="switchTab('chat')"><span class="ic">🤖</span>Mentor IA</button>
+  <button class="nav-btn" onclick="switchTab('settings')"><span class="ic">⚙️</span>Config</button>
+</nav>
+
+<div id="main">
+
+  <!-- DASHBOARD -->
+  <div class="tab active" id="dash">
+    <div class="greeting-card">
+      <div class="greeting-title">E aí, Carlos! 💪</div>
+      <div style="font-size:13px;color:#c0c0e0">Semana <strong id="cur-week">1</strong> de 12 — Mês <strong id="cur-month">1</strong></div>
+      <div class="greeting-verse">"Tudo posso naquele que me fortalece." — Fil. 4:13</div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card purple"><div class="stat-value" id="stat-dias">0</div><div class="stat-label">Dias de streak</div></div>
+      <div class="stat-card teal"><div class="stat-value" id="stat-tasks">0%</div><div class="stat-label">Tarefas hoje</div></div>
+      <div class="stat-card amber"><div class="stat-value" id="stat-clients">0</div><div class="stat-label">Clientes (meta: 3)</div></div>
+      <div class="stat-card red"><div class="stat-value" id="stat-amber">0</div><div class="stat-label">Seguidores Amber</div></div>
+    </div>
+    <div class="section-title">📚 Foco desta semana</div>
+    <div class="week-card" onclick="switchTab('cal')">
+      <div class="week-badge" id="focus-badge">S1</div>
+      <div class="week-info">
+        <div class="week-name" id="focus-name">Psicologia da venda</div>
+        <div class="week-desc" id="focus-desc">Como as pessoas decidem comprar</div>
+      </div>
+      <span style="color:var(--muted);font-size:18px">→</span>
+    </div>
+    <div class="section-title">🎯 Tarefas de hoje</div>
+    <div id="daily-tasks"></div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>Progresso geral</span><span id="prog-pct">8%</span></div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-bar" style="width:8%"></div></div>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="tab" id="cal">
+    <div class="month-header" id="cal-month-title"></div>
+    <div class="month-sub">Plano de 12 Semanas</div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="section-title">🗓 Cronograma completo</div>
+    <div id="schedule-list"></div>
+  </div>
+
+  <!-- ALARM -->
+  <div class="tab" id="alarm">
+    <div class="alarm-hero">
+      <div class="alarm-clock" id="live-clock">--:--:--</div>
+      <div class="alarm-date" id="live-date"></div>
+    </div>
+    <div class="section-title">Seus alarmes</div>
+    <div id="alarm-list"></div>
+    <button class="add-alarm-btn" onclick="openAlarmModal()">+ Adicionar alarme</button>
+  </div>
+
+  <!-- AMBER -->
+  <div class="tab" id="amber">
+    <div class="amber-hero">
+      <div class="amber-avatar">🎮</div>
+      <div class="amber-name">Amber Parker</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;font-style:italic">"A gamer misteriosa que ninguém sabe se é real"</div>
+      <div class="metric-row">
+        <div class="metric-pill"><div class="metric-num" id="amb-followers">0</div><div class="metric-lbl">Seguidores</div></div>
+        <div class="metric-pill"><div class="metric-num" id="amb-posts">0</div><div class="metric-lbl">Posts</div></div>
+        <div class="metric-pill"><div class="metric-num">1k</div><div class="metric-lbl">Meta 60d</div></div>
+      </div>
+    </div>
+    <div class="section-title">📅 Posts desta semana</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:12px">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:9px">Marque os dias que postou:</div>
+      <div style="display:flex;gap:5px" id="post-days"></div>
+      <div style="margin-top:10px;font-size:12px;color:var(--muted)">Meta: 5x por semana · TikTok ama quem posta muito 🔥</div>
+    </div>
+    <div class="section-title">📊 Atualizar métricas</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:12px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+        <div>
+          <label style="font-size:11px;color:var(--muted);margin-bottom:4px;display:block">Seguidores</label>
+          <input type="number" id="amb-followers-input" placeholder="0" class="settings-input" style="font-size:20px;font-family:var(--fh);font-weight:700;text-align:center">
+        </div>
+        <div>
+          <label style="font-size:11px;color:var(--muted);margin-bottom:4px;display:block">Clientes Carlos</label>
+          <input type="number" id="clients-input" placeholder="0" class="settings-input" style="font-size:20px;font-family:var(--fh);font-weight:700;text-align:center">
+        </div>
+      </div>
+      <button onclick="saveMetrics()" class="save-btn">Salvar métricas</button>
+    </div>
+    <div class="section-title">🎬 Tipos de vídeo</div>
+    <div id="video-types"></div>
+    <div style="height:16px"></div>
+  </div>
+
+  <!-- CHAT -->
+  <div class="tab" id="chat">
+    <div id="chat-locked-view" class="chat-locked">
+      <div class="lock-icon">🤖</div>
+      <div style="font-family:var(--fh);font-size:18px;font-weight:700">Mentor IA pessoal</div>
+      <p>Configure sua chave de API (OpenAI ou Abacus) na aba <strong>⚙️ Config</strong> para ativar seu mentor.</p>
+      <button onclick="switchTab('settings')">Ir para Config →</button>
+    </div>
+    <div id="messages" style="display:none"></div>
+    <div id="chat-bar" style="display:none">
+      <textarea id="chat-input" rows="1" placeholder="Pergunte ao seu mentor..."></textarea>
+      <button id="send-btn" onclick="sendMessage()">↑</button>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="tab" id="settings">
+
+    <div class="settings-section">
+      <h3>☁️ Supabase — Salvar na nuvem</h3>
+      <div class="settings-row">
+        <label>Project URL</label>
+        <input type="text" id="sb-url" class="settings-input" placeholder="https://xxxx.supabase.co">
+      </div>
+      <div class="settings-row">
+        <label>Anon Key (public)</label>
+        <input type="password" id="sb-key" class="settings-input" placeholder="eyJ...">
+      </div>
+      <button class="save-btn" onclick="saveSupabase()">Conectar Supabase</button>
+      <div class="status-msg" id="sb-status"></div>
+    </div>
+
+    <div class="settings-section">
+      <h3>🤖 Agente de IA</h3>
+      <div class="ai-selector" id="ai-selector">
+        <div class="ai-option selected" id="opt-openai" onclick="selectAI('openai')">
+          <div class="ai-icon">🟢</div>
+          <div class="ai-name">OpenAI</div>
+          <div class="ai-sub">GPT-4o</div>
+        </div>
+        <div class="ai-option" id="opt-abacus" onclick="selectAI('abacus')">
+          <div class="ai-icon">🟠</div>
+          <div class="ai-name">Abacus AI</div>
+          <div class="ai-sub">Seu agente</div>
+        </div>
+      </div>
+      <div id="openai-fields">
+        <div class="settings-row">
+          <label>Chave OpenAI</label>
+          <input type="password" id="openai-key" class="settings-input" placeholder="sk-...">
+        </div>
+      </div>
+      <div id="abacus-fields" style="display:none">
+        <div class="settings-row">
+          <label>Chave API Abacus</label>
+          <input type="password" id="abacus-key" class="settings-input" placeholder="sua chave abacus...">
+        </div>
+        <div class="settings-row">
+          <label>Deployment ID (opcional)</label>
+          <input type="text" id="abacus-deployment" class="settings-input" placeholder="ex: carlos-mentor-agent">
+        </div>
+      </div>
+      <button class="save-btn" onclick="saveAIConfig()">Salvar configuração de IA</button>
+      <div class="status-msg" id="ai-status"></div>
+    </div>
+
+    <div class="settings-section">
+      <h3>📆 Semana atual do plano</h3>
+      <div style="display:flex;align-items:center;gap:10px">
+        <button onclick="changeWeek(-1)" style="width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);color:var(--text);font-size:20px;cursor:pointer">−</button>
+        <div style="flex:1;text-align:center">
+          <div style="font-family:var(--fh);font-size:32px;font-weight:800;color:var(--accent)" id="week-display">1</div>
+          <div style="font-size:12px;color:var(--muted)" id="week-label-display">de 12 semanas</div>
+        </div>
+        <button onclick="changeWeek(1)" style="width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);color:var(--text);font-size:20px;cursor:pointer">+</button>
+      </div>
+    </div>
+
+    <div style="height:20px"></div>
+  </div>
+
+</div>
+
+<!-- ALARM MODAL -->
+<div id="alarm-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Novo alarme</div>
+    <div class="time-picker">
+      <div class="time-part"><label>Hora</label><input type="number" class="time-input" id="alarm-hour" value="06" min="0" max="23"></div>
+      <div style="display:flex;align-items:flex-end;padding-bottom:11px;font-size:26px;font-weight:700;color:var(--muted)">:</div>
+      <div class="time-part"><label>Minuto</label><input type="number" class="time-input" id="alarm-min" value="00" min="0" max="59"></div>
+    </div>
+    <input type="text" class="label-input" id="alarm-label-input" placeholder="Ex: Estudar, Postar Amber...">
+    <button class="modal-save" onclick="saveAlarm()">Salvar alarme</button>
+    <button onclick="closeAlarmModal()" style="width:100%;padding:11px;background:none;border:none;color:var(--muted);font-size:13px;margin-top:7px;cursor:pointer">Cancelar</button>
+  </div>
+</div>
+
+<script>
+const PLAN = {
+  weeks:[
+    {n:1,tema:"Psicologia da venda",desc:"Como as pessoas decidem comprar",mes:1},
+    {n:2,tema:"Prospecção de clientes locais",desc:"Abordagem e script de vendas",mes:1},
+    {n:3,tema:"Como fechar clientes",desc:"Reunião, proposta, objeção",mes:1},
+    {n:4,tema:"Precificação e contrato",desc:"Quanto cobrar e como proteger",mes:1},
+    {n:5,tema:"Pedro Sobral — Módulo 1 e 2",desc:"Curso + YouTube complementar",mes:2},
+    {n:6,tema:"Pedro Sobral — Módulo 3 e 4",desc:"Criar primeiro anúncio simples",mes:2},
+    {n:7,tema:"Funil de vendas",desc:"Isca, página, oferta do zero",mes:2},
+    {n:8,tema:"Revisão e aplicação",desc:"Avaliar resultados, ajustar estratégia",mes:2},
+    {n:9,tema:"Algoritmo TikTok 2026",desc:"Como funciona e crescer rápido",mes:3},
+    {n:10,tema:"Personagem virtual com IA",desc:"Criar nicho e estratégia",mes:3},
+    {n:11,tema:"Estratégia TikTok + Shop",desc:"Conteúdo gamer + monetização",mes:3},
+    {n:12,tema:"Monetização total",desc:"TikTok Shop, afiliados, parcerias",mes:3},
+  ],
+  dailyTasks:[
+    {id:'study',text:'Estudar tema da semana (1h)',tag:'📚 Estudo'},
+    {id:'content',text:'Criar conteúdo Instagram',tag:'📱 Instagram'},
+    {id:'amber',text:'Postar vídeo da Amber (TikTok)',tag:'🎮 Amber'},
+    {id:'prosp',text:'Prospectar 1 cliente novo',tag:'💼 Clientes'},
+    {id:'exercise',text:'Exercício físico (30min)',tag:'💪 Saúde'},
+  ]
+};
+
+// DEFAULT STATE
+const DEFAULT = {
+  currentWeek:1,streak:0,lastLogin:null,
+  amberFollowers:0,amberPosts:0,clients:0,
+  tasksDone:{},postDays:{},
+  alarms:[
+    {id:1,hour:'06',min:'00',label:'Acordar e orar',on:true},
+    {id:2,hour:'07',min:'00',label:'Estudar tema da semana',on:true},
+    {id:3,hour:'18',min:'00',label:'Postar vídeo Amber',on:true},
+    {id:4,hour:'22',min:'00',label:'Revisar o dia',on:true},
+  ],
+  sbUrl:'',sbKey:'',aiProvider:'openai',openaiKey:'',abacusKey:'',abacusDeployment:''
+};
+
+let state = {...DEFAULT,...JSON.parse(localStorage.getItem('carlos_v2')||'{}')};
+let sb = null;
+let chatHistory = [];
+let aiActive = false;
+
+function save() {
+  localStorage.setItem('carlos_v2', JSON.stringify(state));
+  if (sb) syncToSupabase();
+}
+
+// ─── SUPABASE ───
+async function initSupabase() {
+  if (!state.sbUrl || !state.sbKey) { setSyncStatus('local',''); return; }
+  try {
+    sb = supabase.createClient(state.sbUrl, state.sbKey);
+    setSyncStatus('loading','sync...');
+    const {data,error} = await sb.from('carlos_data').select('data').eq('id','state').single();
+    if (error && error.code !== 'PGRST116') throw error;
+    if (data && data.data && Object.keys(data.data).length > 0) {
+      const remote = data.data;
+      // merge: remote wins for most things, keep local tasks if newer
+      state = {...state,...remote};
+      localStorage.setItem('carlos_v2', JSON.stringify(state));
+    }
+    setSyncStatus('ok','nuvem ✓');
+    refreshAll();
+  } catch(e) {
+    setSyncStatus('err','erro ⚡');
+    console.error('Supabase init error:', e);
+  }
+}
+
+async function syncToSupabase() {
+  if (!sb) return;
+  try {
+    const payload = {...state};
+    delete payload.sbKey; // don't store key in DB
+    await sb.from('carlos_data').upsert({id:'state',data:payload,updated_at:new Date().toISOString()});
+    setSyncStatus('ok','salvo ✓');
+  } catch(e) {
+    setSyncStatus('err','erro sync');
+  }
+}
+
+function setSyncStatus(type, text) {
+  const dot = document.getElementById('sync-dot');
+  const txt = document.getElementById('sync-text');
+  dot.className = 'sync-dot '+type;
+  txt.textContent = text;
+}
+
+async function saveSupabase() {
+  const url = document.getElementById('sb-url').value.trim();
+  const key = document.getElementById('sb-key').value.trim();
+  if (!url.includes('supabase.co')) { showStatus('sb-status','❌ URL inválida. Ex: https://xxx.supabase.co','var(--danger)'); return; }
+  if (!key.startsWith('eyJ')) { showStatus('sb-status','❌ Anon key inválida. Começa com eyJ...','var(--danger)'); return; }
+  state.sbUrl = url; state.sbKey = key;
+  localStorage.setItem('carlos_v2', JSON.stringify(state));
+  showStatus('sb-status','⏳ Conectando...','var(--accent3)');
+  sb = supabase.createClient(url, key);
+  try {
+    const {error} = await sb.from('carlos_data').upsert({id:'state',data:{...state},updated_at:new Date().toISOString()});
+    if (error) throw error;
+    showStatus('sb-status','✅ Conectado! Dados salvando na nuvem.','var(--accent2)');
+    setSyncStatus('ok','nuvem ✓');
+  } catch(e) {
+    showStatus('sb-status','❌ Erro: '+e.message,'var(--danger)');
+    setSyncStatus('err','erro');
+  }
+}
+
+// ─── AI CONFIG ───
+function selectAI(provider) {
+  state.aiProvider = provider;
+  document.getElementById('opt-openai').classList.toggle('selected', provider==='openai');
+  document.getElementById('opt-abacus').classList.toggle('selected', provider==='abacus');
+  document.getElementById('openai-fields').style.display = provider==='openai' ? 'block' : 'none';
+  document.getElementById('abacus-fields').style.display = provider==='abacus' ? 'block' : 'none';
+}
+
+function saveAIConfig() {
+  const p = state.aiProvider;
+  if (p==='openai') {
+    const k = document.getElementById('openai-key').value.trim();
+    if (!k.startsWith('sk-')) { showStatus('ai-status','❌ Chave OpenAI inválida. Começa com sk-','var(--danger)'); return; }
+    state.openaiKey = k;
+  } else {
+    const k = document.getElementById('abacus-key').value.trim();
+    if (!k) { showStatus('ai-status','❌ Digite sua chave Abacus','var(--danger)'); return; }
+    state.abacusKey = k;
+    state.abacusDeployment = document.getElementById('abacus-deployment').value.trim();
+  }
+  save();
+  showStatus('ai-status','✅ IA configurada! Vá na aba Mentor IA 🤖','var(--accent2)');
+  setTimeout(()=>setupChat(), 800);
+}
+
+function showStatus(id, msg, color) {
+  const el = document.getElementById(id);
+  el.textContent = msg; el.style.color = color;
+}
+
+// ─── CHAT / AI ───
+function setupChat() {
+  const hasOpenAI = state.aiProvider==='openai' && state.openaiKey;
+  const hasAbacus = state.aiProvider==='abacus' && state.abacusKey;
+  aiActive = hasOpenAI || hasAbacus;
+  
+  document.getElementById('chat-locked-view').style.display = aiActive ? 'none' : 'flex';
+  document.getElementById('messages').style.display = aiActive ? 'flex' : 'none';
+  document.getElementById('chat-bar').style.display = aiActive ? 'flex' : 'none';
+  
+  if (aiActive && chatHistory.length===0) {
+    const week = PLAN.weeks[state.currentWeek-1];
+    const badge = state.aiProvider==='abacus' ? 
+      '<div class="ai-badge abacus">🟠 Abacus AI</div>' : 
+      '<div class="ai-badge openai">🟢 OpenAI GPT-4o</div>';
+    addMsg('assistant', `Eai Carlos! 👋 Sou seu mentor de IA pessoal.\n\nVocê tá na **Semana ${state.currentWeek}: ${week.tema}**. Streak: **${state.streak} dias** 🔥\n\nComo posso te ajudar hoje?`, badge);
+  }
+}
+
+function addMsg(role, text, badgeHtml='') {
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className = 'msg '+role;
+  const now = new Date();
+  const t = String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+  const formatted = text.replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  div.innerHTML = (badgeHtml||'') + `<div class="msg-bubble">${formatted}</div><div class="msg-time">${t}</div>`;
+  msgs.appendChild(div);
+  chatHistory.push({role, content: text});
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className='msg assistant'; div.id='typing-msg';
+  div.innerHTML='<div class="msg-bubble"><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>';
+  msgs.appendChild(div); msgs.scrollTop=msgs.scrollHeight;
+}
+function removeTyping() { const el=document.getElementById('typing-msg'); if(el) el.remove(); }
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text || !aiActive) return;
+  addMsg('user', text);
+  input.value=''; input.style.height='auto';
+  document.getElementById('send-btn').disabled=true;
+  showTyping();
+
+  const week = PLAN.weeks[state.currentWeek-1];
+  const systemPrompt = `Você é o mentor pessoal de IA do Carlos Alberto, empreendedor digital brasileiro 2026.
+CONTEXTO: Semana ${state.currentWeek}/12 — ${week.tema}. Mês ${week.mes}. Streak: ${state.streak} dias.
+Gerencia influencer virtual "Amber Parker" (gamer girl TikTok, ${state.amberFollowers} seguidores).
+Meta: 3 clientes gestão Instagram (R$500-800/mês). Atual: ${state.clients} clientes.
+Cristão, tem filhos, muito motivado. Ex-motorista Uber migrando pro digital.
+Seja direto, motivador, prático. Português BR casual. Máximo 120 palavras.`;
+
+  const messages = chatHistory.slice(-10)
+    .map(m=>({role:m.role==='assistant'?'assistant':'user', content:m.content}));
+
+  try {
+    let reply = '';
+    if (state.aiProvider==='openai') {
+      reply = await callOpenAI(systemPrompt, messages);
+    } else {
+      reply = await callAbacus(systemPrompt, messages);
+    }
+    removeTyping();
+    const badge = state.aiProvider==='abacus'?'<div class="ai-badge abacus">🟠 Abacus AI</div>':'<div class="ai-badge openai">🟢 OpenAI</div>';
+    addMsg('assistant', reply, badge);
+  } catch(e) {
+    removeTyping();
+    addMsg('assistant', '⚠️ Erro: '+e.message+'\n\nVerifica sua chave em ⚙️ Config.');
+  }
+  document.getElementById('send-btn').disabled=false;
+}
+
+async function callOpenAI(system, messages) {
+  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+state.openaiKey},
+    body: JSON.stringify({
+      model:'gpt-4o',
+      max_tokens:300,
+      messages:[{role:'system',content:system},...messages]
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(data.error.message);
+  return data.choices[0].message.content;
+}
+
+async function callAbacus(system, messages) {
+  // Abacus AI REST API — compatível com formato OpenAI
+  const endpoint = state.abacusDeployment 
+    ? `https://api.abacus.ai/api/v0/deployments/${state.abacusDeployment}/predict`
+    : 'https://api.abacus.ai/api/v0/chat/completions';
+  
+  const res = await fetch(endpoint, {
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'apiKey': state.abacusKey
+    },
+    body: JSON.stringify({
+      messages:[{role:'system',content:system},...messages],
+      max_tokens:300,
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(JSON.stringify(data.error));
+  // Tenta diferentes formatos de resposta Abacus
+  if (data.choices) return data.choices[0].message.content;
+  if (data.response) return data.response;
+  if (data.output) return data.output;
+  return JSON.stringify(data);
+}
+
+// ─── TABS ───
+function switchTab(name) {
+  const tabs={dash:0,cal:1,alarm:2,amber:3,chat:4,settings:5};
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===tabs[name]));
+  document.querySelectorAll('.nav-btn').forEach((b,i)=>b.classList.toggle('active',i===tabs[name]));
+  if(name==='chat') setupChat();
+}
+
+// ─── DASHBOARD ───
+function initDash() {
+  const today = new Date().toDateString();
+  if (state.lastLogin !== today) {
+    const yesterday = new Date(Date.now()-86400000).toDateString();
+    state.streak = state.lastLogin===yesterday ? state.streak+1 : 1;
+    state.lastLogin = today;
+    state.tasksDone[today] = state.tasksDone[today]||{};
+    save();
+  }
+  document.getElementById('stat-dias').textContent = state.streak;
+  document.getElementById('stat-amber').textContent = state.amberFollowers;
+  document.getElementById('stat-clients').textContent = state.clients||0;
+
+  const w = PLAN.weeks[state.currentWeek-1];
+  document.getElementById('cur-week').textContent = state.currentWeek;
+  document.getElementById('cur-month').textContent = w.mes;
+  document.getElementById('focus-badge').textContent = 'S'+state.currentWeek;
+  document.getElementById('focus-name').textContent = w.tema;
+  document.getElementById('focus-desc').textContent = w.desc;
+  document.getElementById('week-display').textContent = state.currentWeek;
+
+  const pct = Math.round((state.currentWeek/12)*100);
+  document.getElementById('prog-pct').textContent = pct+'%';
+  document.getElementById('prog-bar').style.width = pct+'%';
+
+  const done = state.tasksDone[today]||{};
+  const doneCount = Object.values(done).filter(Boolean).length;
+  document.getElementById('stat-tasks').textContent = Math.round((doneCount/PLAN.dailyTasks.length)*100)+'%';
+
+  const container = document.getElementById('daily-tasks');
+  container.innerHTML='';
+  PLAN.dailyTasks.forEach(task=>{
+    const isDone = done[task.id];
+    const div = document.createElement('div');
+    div.className='task-item';
+    div.innerHTML=`<div class="task-check ${isDone?'done':''}">${isDone?'✓':''}</div><div class="task-text ${isDone?'done':''}">${task.text}</div><span class="task-tag">${task.tag}</span>`;
+    div.onclick=()=>{
+      state.tasksDone[today]=state.tasksDone[today]||{};
+      state.tasksDone[today][task.id]=!state.tasksDone[today][task.id];
+      save(); initDash();
+    };
+    container.appendChild(div);
+  });
+}
+
+function changeWeek(d) {
+  state.currentWeek = Math.max(1, Math.min(12, state.currentWeek+d));
+  save(); initDash();
+}
+
+// ─── CALENDAR ───
+function initCalendar() {
+  const now=new Date(), y=now.getFullYear(), m=now.getMonth();
+  const months=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  document.getElementById('cal-month-title').textContent = months[m]+' '+y;
+  const grid=document.getElementById('cal-grid');
+  const days=['D','S','T','Q','Q','S','S'];
+  grid.innerHTML=days.map(d=>`<div class="cal-day-name">${d}</div>`).join('');
+  const firstDay=new Date(y,m,1).getDay(), daysInMonth=new Date(y,m+1,0).getDate(), today=now.getDate();
+  for(let i=0;i<firstDay;i++) grid.innerHTML+=`<div class="cal-day empty"></div>`;
+  for(let d=1;d<=daysInMonth;d++) {
+    const isT=d===today, isPast=d<today;
+    grid.innerHTML+=`<div class="cal-day ${isT?'today':''} ${isPast&&!isT?'past':''}">${d}</div>`;
+  }
+  const sc=document.getElementById('schedule-list');
+  sc.innerHTML='';
+  const colors=['#7c6af7','#7c6af7','#7c6af7','#7c6af7','#5ccfb0','#5ccfb0','#5ccfb0','#5ccfb0','#f7b26a','#f7b26a','#f7b26a','#f7b26a'];
+  PLAN.weeks.forEach(w=>{
+    const active=w.n===state.currentWeek;
+    const div=document.createElement('div');
+    div.className='week-card';
+    if(active){div.style.borderColor=colors[w.n-1]+'55';div.style.background=colors[w.n-1]+'11';}
+    div.innerHTML=`<div class="week-badge" style="background:linear-gradient(135deg,${colors[w.n-1]},${colors[w.n-1]}88)">S${w.n}</div><div class="week-info"><div class="week-name">${w.tema}</div><div class="week-desc">Mês ${w.mes} · ${w.desc}</div></div>${active?`<span style="color:${colors[w.n-1]}">●</span>`:''}`;
+    sc.appendChild(div);
+  });
+}
+
+// ─── ALARM ───
+function initAlarm() {
+  const list=document.getElementById('alarm-list');
+  list.innerHTML='';
+  state.alarms.forEach(al=>{
+    const div=document.createElement('div');
+    div.className='alarm-item';
+    div.innerHTML=`<div><div class="alarm-time">${al.hour}:${al.min}</div><div class="alarm-label">${al.label}</div></div><div class="alarm-toggle ${al.on?'on':''}" onclick="toggleAlarm(${al.id})"></div>`;
+    list.appendChild(div);
+  });
+}
+function toggleAlarm(id){const a=state.alarms.find(x=>x.id===id);if(a){a.on=!a.on;save();initAlarm();}}
+function openAlarmModal(){document.getElementById('alarm-modal').classList.add('open');}
+function closeAlarmModal(){document.getElementById('alarm-modal').classList.remove('open');}
+function saveAlarm(){
+  const h=String(document.getElementById('alarm-hour').value).padStart(2,'0');
+  const m=String(document.getElementById('alarm-min').value).padStart(2,'0');
+  const label=document.getElementById('alarm-label-input').value||'Alarme';
+  state.alarms.push({id:Date.now(),hour:h,min:m,label,on:true});
+  save(); closeAlarmModal(); initAlarm();
+}
+
+// ─── AMBER ───
+function initAmber() {
+  const days=['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];
+  const week=new Date().toISOString().substring(0,10);
+  const container=document.getElementById('post-days');
+  container.innerHTML='';
+  days.forEach((d,i)=>{
+    const key=week+'_'+i, posted=state.postDays[key];
+    const btn=document.createElement('div');
+    btn.style.cssText=`flex:1;aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;font-weight:600;border:1px solid ${posted?'var(--accent2)':'var(--border)'};background:${posted?'rgba(92,207,176,.2)':'var(--bg3)'};color:${posted?'var(--accent2)':'var(--muted)'};`;
+    btn.textContent=d;
+    btn.onclick=()=>{state.postDays[key]=!state.postDays[key];if(state.postDays[key])state.amberPosts=(state.amberPosts||0)+1;save();initAmber();};
+    container.appendChild(btn);
+  });
+  document.getElementById('amb-followers').textContent=state.amberFollowers;
+  document.getElementById('amb-posts').textContent=state.amberPosts||0;
+  document.getElementById('amb-followers-input').value=state.amberFollowers||'';
+  document.getElementById('clients-input').value=state.clients||'';
+
+  const videos=[
+    {icon:'💃',name:'Dancinhas com filtro gamer/neon',time:'7–15 segundos'},
+    {icon:'🎮',name:'POV: você é gamer',time:'Trends + áudio viral'},
+    {icon:'📦',name:'Unboxing produto gamer',time:'TikTok Shop futuro'},
+    {icon:'🎵',name:'Collab com áudios virais',time:'Você já faz isso!'},
+    {icon:'💬',name:'Amber respondendo comment',time:'Cria proximidade'},
+  ];
+  const vt=document.getElementById('video-types');
+  vt.innerHTML='';
+  videos.forEach(v=>{
+    const div=document.createElement('div');
+    div.style.cssText='display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px;margin-bottom:7px;';
+    div.innerHTML=`<span style="font-size:22px">${v.icon}</span><div><div style="font-size:13px;font-weight:500">${v.name}</div><div style="font-size:11px;color:var(--muted)">${v.time}</div></div>`;
+    vt.appendChild(div);
+  });
+}
+
+function saveMetrics() {
+  const f = parseInt(document.getElementById('amb-followers-input').value)||0;
+  const c = parseInt(document.getElementById('clients-input').value)||0;
+  state.amberFollowers=f; state.clients=c;
+  save(); initDash(); initAmber();
+  // Visual feedback
+  const btn = event.target;
+  btn.textContent='✅ Salvo!';
+  setTimeout(()=>btn.textContent='Salvar métricas',1500);
+}
+
+// ─── CLOCK ───
+function liveClock() {
+  const now=new Date();
+  const h=String(now.getHours()).padStart(2,'0');
+  const m=String(now.getMinutes()).padStart(2,'0');
+  const s=String(now.getSeconds()).padStart(2,'0');
+  const el=document.getElementById('live-clock');
+  if(el) el.textContent=h+':'+m+':'+s;
+  const days=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const months=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  const de=document.getElementById('live-date');
+  if(de) de.textContent=days[now.getDay()]+', '+now.getDate()+' '+months[now.getMonth()]+' '+now.getFullYear();
+  // alarm check
+  state.alarms.filter(a=>a.on).forEach(a=>{
+    if(a.hour===h&&a.min===m&&s==='00'&&'Notification' in window&&Notification.permission==='granted'){
+      new Notification('⏰ '+a.label,{body:'Carlos, hora de: '+a.label,icon:''});
+    }
+  });
+}
+
+// ─── SETTINGS RESTORE ───
+function restoreSettings() {
+  if(state.sbUrl) document.getElementById('sb-url').value=state.sbUrl;
+  if(state.sbKey) document.getElementById('sb-key').value=state.sbKey;
+  if(state.openaiKey) document.getElementById('openai-key').value=state.openaiKey;
+  if(state.abacusKey) document.getElementById('abacus-key').value=state.abacusKey;
+  if(state.abacusDeployment) document.getElementById('abacus-deployment').value=state.abacusDeployment;
+  selectAI(state.aiProvider||'openai');
+}
+
+function refreshAll() {
+  initDash(); initCalendar(); initAlarm(); initAmber(); restoreSettings();
+}
+
+// ─── CHAT INPUT AUTO-RESIZE ───
+document.addEventListener('DOMContentLoaded',()=>{
+  const ci=document.getElementById('chat-input');
+  if(ci){
+    ci.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}});
+    ci.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
+  }
+});
+
+// ─── INIT ───
+if('Notification' in window && Notification.permission==='default') Notification.requestPermission();
+refreshAll();
+if(state.sbUrl && state.sbKey) initSupabase();
+if(state.aiProvider && (state.openaiKey||state.abacusKey)) setupChat();
+setInterval(liveClock,1000);
+liveClock();
+</script>
+</body>
+</html>
