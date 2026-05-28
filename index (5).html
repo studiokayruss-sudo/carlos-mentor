@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#0b0b14">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Carlos Mentor">
+<title>Carlos Mentor AI 2026</title>
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAADsklEQVR42u3dPU4DMRSF0SmnYYesgNUhNsJyKEF0SCFSkok9z++e4mshY7+THyVxtv1l3670LTXrYs4Nv6IRGH5FIzD8ikZg+BWNwPArOsMvACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJABm9vr5/tQMCgAACAAABAAAAiAHgCEBIBqBIQEAAAEAgAAAQADkADAgAEQjMCAAACAAABAAAAgAALxABwCAEz+XBAUApQHMHHgYACgBoMrQwwDAVADVBx8GAIYMy4qDDwIAh4ekw+CDAMDdw9Fx8EEAQBAAoGwIACgaAQCKRgCAoiEAoGgEACgaAQCKRgCAohEAoGgEACgaAQALDRAEACw9MF2vEQAASgwHAACUAZB23QAAUG4QIADA5lsHp0Pb9N1aAGCzIQgBYJPPXR8AbLA1AsDGWisAWm2qR0sAbCYErdYNAF8Oj167zQYafgACNvDr4+2mkk9K8xqg8cYBMA+B9wEaAEg9LNanQQGIPzbcN8IabtY9AJKH/9Z19aV4AOIAOBgrAIDhv1xbZ4M2eK4KgAAAQAAAoEAAPvYgAAy/ugBw7y8AABAAhl8AACAAABAAAAgAAAQAAAIAAAEAgAAAQAAAIAAAEAABAG65xvQ7AwBCjjx/ZB0BAKD9MSbpTw8BaLDJR64x/WkiAItv8NHrS3+tBEDILz6O/jsAeBpU+rpn/C0APApEAHA2KADLXfOINQQAgGWudyYqABYFUH1TR19PIoKY06FX39BZ1wGAR4Hlr3PF/wcAAKWGEQAI2rzbW+21BgAAlAXgVyIBKLep1e/9/U6wR4Hoe3+/FO9RYHkA3R9F2wPouokAAHD6Jp65kTNuX8d1iwTQcTOrvfPrNUAwgDM2deTt6rZWADTc2FG3yfAD0AqB4QegLYJn3Z4ZawJAEIBZG37ml166fySiLYBOCI7ejk53BgAURjByAB65DV2uHYCFAIwahrOuw6dBISgzGIYfgKWHBwAA4hFUfvPKqRAQyLlAEMjRiBDI4bgQyPHoEMgPZEBg+HcAIDD8AEBg8AEAwfADAIHhBwACgw8ACIYfABAMPgAgGHwAQDD4AIBg6AGAwdADAIShB0DPRWEdAZAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkAAQABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAUmkAECgeAARKbPsLAAJFDf9/ACBQzPBfAwCBIob/tx9zDTeZTiDVBgAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAADsklEQVR42u3dPU4DMRSF0SmnYYesgNUhNsJyKEF0SCFSkok9z++e4mshY7+THyVxtv1l3670LTXrYs4Nv6IRGH5FIzD8ikZg+BWNwPArOsMvACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJABm9vr5/tQMCgAACAAABAAAAiAHgCEBIBqBIQEAAAEAgAAAQADkADAgAEQjMCAAACAAABAAAAgAALxABwCAEz+XBAUApQHMHHgYACgBoMrQwwDAVADVBx8GAIYMy4qDDwIAh4ekw+CDAMDdw9Fx8EEAQBAAoGwIACgaAQCKRgCAoiEAoGgEACgaAQCKRgCAohEAoGgEACgaAQALDRAEACw9MF2vEQAASgwHAACUAZB23QAAUG4QIADA5lsHp0Pb9N1aAGCzIQgBYJPPXR8AbLA1AsDGWisAWm2qR0sAbCYErdYNAF8Oj167zQYafgACNvDr4+2mkk9K8xqg8cYBMA+B9wEaAEg9LNanQQGIPzbcN8IabtY9AJKH/9Z19aV4AOIAOBgrAIDhv1xbZ4M2eK4KgAAAQAAAoEAAPvYgAAy/ugBw7y8AABAAhl8AACAAABAAAAgAAAQAAAIAAAEAgAAAQAAAIAAAEAABAG65xvQ7AwBCjjx/ZB0BAKD9MSbpTw8BaLDJR64x/WkiAItv8NHrS3+tBEDILz6O/jsAeBpU+rpn/C0APApEAHA2KADLXfOINQQAgGWudyYqABYFUH1TR19PIoKY06FX39BZ1wGAR4Hlr3PF/wcAAKWGEQAI2rzbW+21BgAAlAXgVyIBKLep1e/9/U6wR4Hoe3+/FO9RYHkA3R9F2wPouokAAHD6Jp65kTNuX8d1iwTQcTOrvfPrNUAwgDM2deTt6rZWADTc2FG3yfAD0AqB4QegLYJn3Z4ZawJAEIBZG37ml166fySiLYBOCI7ejk53BgAURjByAB65DV2uHYCFAIwahrOuw6dBISgzGIYfgKWHBwAA4hFUfvPKqRAQyLlAEMjRiBDI4bgQyPHoEMgPZEBg+HcAIDD8AEBg8AEAwfADAIHhBwACgw8ACIYfABAMPgAgGHwAQDD4AIBg6AGAwdADAIShB0DPRWEdAZAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkAAQABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAUmkAECgeAARKbPsLAAJFDf9/ACBQzPBfAwCBIob/tx9zDTeZTiDVBgAAAABJRU5ErkJggg==">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root {
+  --bg:#0b0b14;--bg2:#111120;--bg3:#181830;--card:#1a1a2e;
+  --border:rgba(255,255,255,0.07);--accent:#7c6af7;--accent2:#5ccfb0;
+  --accent3:#f7b26a;--danger:#f06a6a;--text:#f0f0ff;--muted:#7a7a9a;
+  --radius:16px;--fh:'Syne',sans-serif;--fb:'Space Grotesk',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--fb);overflow:hidden}
+body{display:flex;flex-direction:column}
+
+#header{background:linear-gradient(135deg,#0f0f24,#1a0a30);padding:14px 16px 10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-shrink:0;position:relative}
+#header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent)}
+.avatar{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;font-size:15px;flex-shrink:0}
+.header-info{flex:1}
+.header-name{font-family:var(--fh);font-size:15px;font-weight:700}
+.header-sub{font-size:11px;color:var(--muted)}
+#sync-indicator{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.sync-dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+.sync-dot.ok{background:var(--accent2)}
+.sync-dot.err{background:var(--danger)}
+.sync-dot.loading{background:var(--accent3);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+#nav{display:flex;background:var(--bg2);border-bottom:1px solid var(--border);overflow-x:auto;flex-shrink:0;scrollbar-width:none}
+#nav::-webkit-scrollbar{display:none}
+.nav-btn{flex:1;min-width:60px;padding:9px 6px;background:none;border:none;color:var(--muted);font-family:var(--fb);font-size:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:all .2s;border-bottom:2px solid transparent}
+.nav-btn .ic{font-size:17px}
+.nav-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+#main{flex:1;overflow-y:auto;overflow-x:hidden}
+.tab{display:none;padding:14px}
+.tab.active{display:block}
+
+.greeting-card{background:linear-gradient(135deg,#16163a,#1e1060);border:1px solid rgba(124,106,247,.2);border-radius:var(--radius);padding:18px;margin-bottom:14px;position:relative;overflow:hidden}
+.greeting-card::before{content:'🚀';font-size:60px;position:absolute;right:-8px;top:50%;transform:translateY(-50%);opacity:.12}
+.greeting-title{font-family:var(--fh);font-size:21px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:3px}
+.greeting-verse{font-size:11px;color:var(--accent2);font-style:italic;margin-top:7px;border-left:2px solid var(--accent2);padding-left:7px}
+
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.stat-value{font-family:var(--fh);font-size:26px;font-weight:800}
+.stat-label{font-size:10px;color:var(--muted);margin-top:1px}
+.stat-card.purple .stat-value{color:var(--accent)}
+.stat-card.teal .stat-value{color:var(--accent2)}
+.stat-card.amber .stat-value{color:var(--accent3)}
+.stat-card.red .stat-value{color:var(--danger)}
+
+.section-title{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;margin-top:3px}
+.week-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:9px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s}
+.week-card:active{transform:scale(.98)}
+.week-badge{width:42px;height:42px;border-radius:9px;background:linear-gradient(135deg,var(--accent),#a855f7);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:13px;font-weight:800;flex-shrink:0}
+.week-info{flex:1}
+.week-name{font-size:13px;font-weight:600;margin-bottom:1px}
+.week-desc{font-size:11px;color:var(--muted)}
+
+.progress-wrap{margin-bottom:14px}
+.progress-bar-bg{height:5px;background:var(--bg3);border-radius:99px;overflow:hidden}
+.progress-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .6s ease}
+.progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+
+.task-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px 13px;margin-bottom:7px;display:flex;align-items:center;gap:9px;cursor:pointer}
+.task-check{width:21px;height:21px;border-radius:6px;border:2px solid var(--muted);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:12px}
+.task-check.done{background:var(--accent2);border-color:var(--accent2)}
+.task-text{flex:1;font-size:13px}
+.task-text.done{text-decoration:line-through;color:var(--muted)}
+.task-tag{font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(124,106,247,.15);color:var(--accent);border:1px solid rgba(124,106,247,.2);white-space:nowrap}
+
+
+/* ── DASHBOARD MELHORADO ── */
+.motivation-bar{background:linear-gradient(135deg,rgba(247,178,106,.15),rgba(124,106,247,.1));border:1px solid rgba(247,178,106,.25);border-radius:12px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--accent3);font-style:italic;text-align:center;line-height:1.4}
+.focus-card{background:linear-gradient(135deg,rgba(124,106,247,.12),rgba(92,207,176,.08));border:1px solid rgba(124,106,247,.3);border-radius:16px;padding:16px;margin-bottom:14px;cursor:pointer;transition:all .2s}
+.focus-card:active{transform:scale(.98)}
+.focus-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.focus-week-badge{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;flex-shrink:0}
+.focus-title{font-size:15px;font-weight:700;color:var(--text);flex:1}
+.focus-desc-text{font-size:12px;color:var(--muted);margin-bottom:10px;padding-left:2px}
+.week-progress{margin-bottom:8px}
+.week-prog-label{font-size:11px;color:var(--muted);margin-bottom:4px;display:flex;justify-content:space-between}
+.week-prog-bar{height:5px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+.week-prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;transition:width .5s ease}
+.focus-expand-hint{font-size:11px;color:var(--accent2);text-align:center;margin-top:6px;opacity:.8}
+.focus-tasks-list{display:none;border-top:1px solid rgba(255,255,255,.07);padding-top:10px;margin-top:8px}
+.focus-tasks-list.open{display:block}
+.focus-task-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.focus-task-row:last-child{border-bottom:none}
+.focus-task-check{width:24px;height:24px;border-radius:7px;border:2px solid var(--muted);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:all .2s;margin-top:1px}
+.focus-task-check.done{background:var(--accent2);border-color:var(--accent2);color:#000}
+.focus-task-info{flex:1}
+.focus-task-name{font-size:13px;font-weight:600;line-height:1.3;margin-bottom:2px}
+.focus-task-name.done{text-decoration:line-through;color:var(--muted)}
+.focus-task-sub{font-size:11px;color:var(--muted);line-height:1.4;margin-bottom:4px}
+.focus-task-link{font-size:11px;color:var(--accent);font-weight:600;text-decoration:none;background:rgba(124,106,247,.12);padding:3px 8px;border-radius:99px;border:1px solid rgba(124,106,247,.2);display:inline-block}
+
+
+/* ── CALENDÁRIO MELHORADO ── */
+.cal-day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:9px;font-size:12px;background:var(--card);border:1px solid var(--border);cursor:pointer;position:relative;transition:all .15s;padding:2px}
+.cal-day:active{transform:scale(.92)}
+.cal-day.today{background:var(--accent);color:white;border-color:var(--accent);font-weight:700}
+.cal-day.past{opacity:.5}
+.cal-day.has-note::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--accent3)}
+.cal-day.today.has-note::after{background:#fff}
+.cal-day.has-tasks::before{content:'';position:absolute;top:3px;right:3px;width:5px;height:5px;border-radius:50%;background:var(--accent2)}
+.cal-day-tema{font-size:7px;color:var(--muted);text-align:center;line-height:1.1;margin-top:1px;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding:0 1px}
+.cal-day.today .cal-day-tema{color:rgba(255,255,255,.7)}
+
+/* Modal de dia */
+.day-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;display:none;align-items:flex-end}
+.day-modal.open{display:flex}
+.day-modal-sheet{background:var(--bg2);border-radius:24px 24px 0 0;padding:20px 16px 32px;width:100%;max-height:85vh;overflow-y:auto;border-top:1px solid var(--border)}
+.day-modal-handle{width:40px;height:4px;background:var(--border);border-radius:99px;margin:0 auto 16px}
+.day-modal-date{font-family:var(--fh);font-size:20px;font-weight:800;margin-bottom:4px}
+.day-modal-tema{font-size:12px;color:var(--accent2);font-weight:600;margin-bottom:16px}
+.day-modal-section{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;margin-top:16px}
+.day-note-area{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:12px;color:var(--text);font-size:13px;font-family:var(--fb);resize:none;min-height:90px;line-height:1.5}
+.day-note-area:focus{outline:none;border-color:var(--accent)}
+.day-save-btn{width:100%;padding:13px;background:var(--accent);border:none;border-radius:12px;color:#fff;font-size:14px;font-weight:700;margin-top:10px;cursor:pointer;font-family:var(--fb)}
+.day-task-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.day-task-row:last-child{border-bottom:none}
+.day-task-dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);flex-shrink:0}
+.day-task-txt{font-size:12px;color:var(--text)}
+
+/* CALENDAR */
+.month-header{font-family:var(--fh);font-size:19px;font-weight:800;text-align:center;margin-bottom:3px}
+.month-sub{text-align:center;color:var(--muted);font-size:12px;margin-bottom:14px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:14px}
+.cal-day-name{text-align:center;font-size:9px;color:var(--muted);padding:3px;text-transform:uppercase}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:7px;font-size:12px;background:var(--card);border:1px solid var(--border)}
+.cal-day.today{background:var(--accent);color:white;border-color:var(--accent);font-weight:700}
+.cal-day.past{opacity:.35}
+.cal-day.empty{background:transparent;border-color:transparent}
+
+/* ALARM */
+.alarm-hero{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:14px}
+.alarm-clock{font-family:var(--fh);font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-2px}
+.alarm-date{color:var(--muted);font-size:13px;margin-bottom:14px}
+.alarm-item{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:13px 15px;margin-bottom:7px;display:flex;align-items:center;gap:10px}
+.alarm-time{font-family:var(--fh);font-size:22px;font-weight:700;flex:1}
+.alarm-label{font-size:11px;color:var(--muted)}
+.alarm-toggle{width:42px;height:22px;border-radius:11px;background:var(--bg2);border:1px solid var(--border);cursor:pointer;position:relative;transition:background .2s;flex-shrink:0}
+.alarm-toggle.on{background:var(--accent);border-color:var(--accent)}
+.alarm-toggle::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;background:white;border-radius:50%;transition:left .2s}
+.alarm-toggle.on::after{left:22px}
+.add-alarm-btn{width:100%;padding:13px;background:rgba(124,106,247,.1);border:1px dashed rgba(124,106,247,.3);border-radius:12px;color:var(--accent);font-family:var(--fb);font-size:13px;cursor:pointer;text-align:center;margin-top:3px}
+.alarm-del{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px 8px;border-radius:6px;transition:color .2s}
+.alarm-del:active{color:var(--danger)}
+.alarm-info{flex:1}
+/* MODAL ALARME DISPARANDO */
+#alarm-ringing{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column;text-align:center;backdrop-filter:blur(8px)}
+#alarm-ringing.open{display:flex}
+.ring-icon{font-size:80px;animation:ringBell 0.5s infinite alternate}
+@keyframes ringBell{0%{transform:rotate(-15deg) scale(1.1)}100%{transform:rotate(15deg) scale(1.15)}}
+.ring-time{font-family:var(--fh);font-size:64px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:12px 0 6px}
+.ring-label{font-size:18px;color:var(--text);margin-bottom:32px}
+.ring-stop{background:linear-gradient(135deg,var(--danger),#c0392b);border:none;color:#fff;font-family:var(--fh);font-size:17px;font-weight:700;padding:18px 52px;border-radius:99px;cursor:pointer;box-shadow:0 0 40px rgba(240,106,106,.5);animation:pulseShadow 1s infinite}
+@keyframes pulseShadow{0%,100%{box-shadow:0 0 30px rgba(240,106,106,.4)}50%{box-shadow:0 0 60px rgba(240,106,106,.8)}}
+.ring-snooze{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--muted);font-family:var(--fb);font-size:13px;padding:11px 28px;border-radius:99px;cursor:pointer;margin-top:14px}
+.alarm-perm-banner{background:rgba(247,178,106,.12);border:1px solid rgba(247,178,106,.3);border-radius:10px;padding:11px 14px;margin-bottom:12px;font-size:12px;color:var(--accent3);line-height:1.5;display:none}
+.alarm-perm-banner.show{display:block}
+
+/* SETTINGS */
+.settings-section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px}
+.settings-section h3{font-family:var(--fh);font-size:14px;font-weight:700;margin-bottom:10px}
+.settings-row{margin-bottom:10px}
+.settings-row label{font-size:12px;color:var(--muted);margin-bottom:5px;display:block}
+.settings-input{width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--fb);font-size:13px;outline:none}
+.settings-input:focus{border-color:var(--accent)}
+.ai-selector{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.ai-option{padding:12px 8px;background:var(--bg3);border:2px solid var(--border);border-radius:10px;text-align:center;cursor:pointer;transition:all .2s}
+.ai-option.selected{border-color:var(--accent);background:rgba(124,106,247,.1)}
+.ai-option .ai-icon{font-size:22px;margin-bottom:4px}
+.ai-option .ai-name{font-size:12px;font-weight:600}
+.ai-option .ai-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.save-btn{width:100%;padding:12px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#a855f7);border:none;color:white;font-family:var(--fh);font-size:15px;font-weight:700;cursor:pointer;transition:all .15s}
+.save-btn:active{transform:scale(.97)}
+.status-msg{font-size:12px;text-align:center;margin-top:7px;min-height:18px}
+
+/* AMBER */
+.amber-hero{background:linear-gradient(135deg,#1a0030,#0d1a20);border:1px solid rgba(92,207,176,.2);border-radius:var(--radius);padding:18px;margin-bottom:14px;text-align:center}
+.amber-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#7c6af7,#5ccfb0);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:32px;border:3px solid rgba(92,207,176,.4)}
+.amber-name{font-family:var(--fh);font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.metric-row{display:flex;gap:7px;margin-top:12px}
+.metric-pill{flex:1;padding:9px 7px;background:rgba(255,255,255,.05);border-radius:9px;text-align:center;border:1px solid var(--border)}
+.metric-num{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--accent2)}
+.metric-lbl{font-size:10px;color:var(--muted)}
+
+/* CHAT */
+#chat-tab{display:none;flex-direction:column;padding:0}
+#chat-tab.active{display:flex;height:calc(100vh - 116px)}
+#messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.msg{display:flex;flex-direction:column;max-width:86%}
+.msg.user{align-self:flex-end;align-items:flex-end}
+.msg.assistant{align-self:flex-start;align-items:flex-start}
+.msg-bubble{padding:9px 13px;border-radius:15px;font-size:14px;line-height:1.5}
+.msg.user .msg-bubble{background:var(--accent);border-bottom-right-radius:3px}
+.msg.assistant .msg-bubble{background:var(--card);border:1px solid var(--border);border-bottom-left-radius:3px}
+.msg-time{font-size:10px;color:var(--muted);margin-top:3px;padding:0 3px}
+.chat-locked{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center}
+.chat-locked .lock-icon{font-size:48px}
+.chat-locked p{font-size:13px;color:var(--muted);line-height:1.6}
+.chat-locked button{padding:11px 24px;border-radius:10px;background:var(--accent);border:none;color:white;font-family:var(--fh);font-size:14px;font-weight:600;cursor:pointer}
+#chat-bar{display:flex;gap:7px;padding:10px 14px;border-top:1px solid var(--border);background:var(--bg2);flex-shrink:0}
+#chat-input{flex:1;padding:9px 13px;background:var(--bg3);border:1px solid var(--border);border-radius:11px;color:var(--text);font-family:var(--fb);font-size:13px;resize:none;max-height:110px;outline:none}
+#send-btn{width:40px;height:40px;border-radius:11px;background:var(--accent);border:none;cursor:pointer;font-size:17px;flex-shrink:0;transition:all .15s;color:white;display:flex;align-items:center;justify-content:center}
+#send-btn:active{transform:scale(.92)}
+#send-btn:disabled{opacity:.4}
+.typing-indicator{display:flex;align-items:center;gap:4px;padding:6px 2px}
+.typing-dot{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bounce 1.2s ease infinite}
+.typing-dot:nth-child(2){animation-delay:.2s}
+.typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+
+/* AI BADGE */
+.ai-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;padding:3px 8px;border-radius:99px;margin-bottom:5px}
+.ai-badge.openai{background:rgba(16,163,127,.15);color:#10a37f;border:1px solid rgba(16,163,127,.25)}
+.ai-badge.abacus{background:rgba(247,178,106,.15);color:var(--accent3);border:1px solid rgba(247,178,106,.25)}
+
+/* MODAL */
+#alarm-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:100;align-items:flex-end;backdrop-filter:blur(4px)}
+#alarm-modal.open{display:flex}
+.modal-sheet{width:100%;background:var(--bg2);border-radius:20px 20px 0 0;padding:18px;border-top:1px solid var(--border);animation:slideUp .3s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{width:32px;height:3px;background:var(--border);border-radius:2px;margin:0 auto 14px}
+.modal-title{font-family:var(--fh);font-size:17px;font-weight:700;margin-bottom:14px}
+.time-picker{display:flex;gap:7px;margin-bottom:14px}
+.time-part{flex:1}
+.time-part label{font-size:11px;color:var(--muted);margin-bottom:4px;display:block}
+.time-input{width:100%;padding:11px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--fh);font-size:22px;font-weight:700;text-align:center}
+.label-input{width:100%;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--fb);font-size:13px;margin-bottom:14px}
+.modal-save{width:100%;padding:13px;border-radius:11px;background:linear-gradient(135deg,var(--accent),#a855f7);border:none;color:white;font-family:var(--fh);font-size:15px;font-weight:700;cursor:pointer}
+</style>
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div id="header">
+  <div class="avatar">C</div>
+  <div class="header-info">
+    <div class="header-name">Carlos Alberto 🔥</div>
+    <div class="header-sub">Plano de Vida 2026</div>
+  </div>
+  <div id="sync-indicator">
+    <div class="sync-dot" id="sync-dot"></div>
+    <span id="sync-text">local</span>
+  </div>
+</div>
+
+<nav id="nav">
+  <button class="nav-btn active" onclick="switchTab('dash')"><span class="ic">🏠</span>Dashboard</button>
+  <button class="nav-btn" onclick="switchTab('cal')"><span class="ic">📅</span>Calendário</button>
+  <button class="nav-btn" onclick="switchTab('alarm')"><span class="ic">⏰</span>Alarmes</button>
+  <button class="nav-btn" onclick="switchTab('amber')"><span class="ic">🎮</span>Amber</button>
+  <button class="nav-btn" onclick="switchTab('chat')"><span class="ic">🤖</span>Mentor IA</button>
+  <button class="nav-btn" onclick="switchTab('settings')"><span class="ic">⚙️</span>Config</button>
+</nav>
+
+<div id="main">
+
+  <!-- DASHBOARD -->
+  <div class="tab active" id="dash">
+    <div class="greeting-card">
+      <div class="greeting-title">E aí, Carlos! 💪</div>
+      <div style="font-size:13px;color:#c0c0e0">Semana <strong id="cur-week">1</strong> de 12 — Mês <strong id="cur-month">1</strong></div>
+      <div class="greeting-verse">"Tudo posso naquele que me fortalece." — Fil. 4:13</div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card purple"><div class="stat-value" id="stat-dias">0</div><div class="stat-label">Dias de streak</div></div>
+      <div class="stat-card teal"><div class="stat-value" id="stat-tasks">0%</div><div class="stat-label">Tarefas hoje</div></div>
+      <div class="stat-card amber"><div class="stat-value" id="stat-clients">0</div><div class="stat-label">Clientes (meta: 3)</div></div>
+      <div class="stat-card red"><div class="stat-value" id="stat-amber">0</div><div class="stat-label">Seguidores Amber</div></div>
+    </div>
+    <div class="motivation-bar" id="motivation-bar">💪 Carregando motivação do dia...</div>
+    <div class="section-title">📚 Foco desta semana</div>
+    <div class="focus-card" onclick="toggleFocusTasks()">
+      <div class="focus-header">
+        <span class="focus-week-badge" id="focus-badge">S1</span>
+        <span class="focus-title" id="focus-name">Psicologia da venda</span>
+        <span id="focus-arrow" style="color:var(--accent2);font-size:14px;font-weight:700">▼</span>
+      </div>
+      <div class="focus-desc-text" id="focus-desc">Como as pessoas decidem comprar</div>
+      <div class="week-progress">
+        <div class="week-prog-label"><span>Tarefas de hoje</span><span id="focus-pct">0%</span></div>
+        <div class="week-prog-bar"><div class="week-prog-fill" id="focus-prog-fill" style="width:0%"></div></div>
+      </div>
+      <div class="focus-tasks-list" id="focus-tasks-list"></div>
+      <div class="focus-expand-hint">👆 Toque para ver as tarefas detalhadas</div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>Progresso geral</span><span id="prog-pct">8%</span></div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-bar" style="width:8%"></div></div>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="tab" id="cal">
+    <div class="month-header" id="cal-month-title"></div>
+    <div class="month-sub">Plano de 12 Semanas</div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="section-title">🗓 Cronograma completo</div>
+    <div id="schedule-list"></div>
+  </div>
+
+  <!-- ALARM -->
+  <div class="tab" id="alarm">
+    <div class="alarm-hero">
+      <div class="alarm-clock" id="live-clock">--:--:--</div>
+      <div class="alarm-date" id="live-date"></div>
+    </div>
+    <div class="alarm-perm-banner" id="alarm-perm-banner">
+      ⚠️ <strong>Permissão necessária</strong> — toque aqui para permitir notificações e o alarme funcionar mesmo com a tela bloqueada.
+    </div>
+    <div class="section-title">Seus alarmes</div>
+    <div id="alarm-list"></div>
+    <button class="add-alarm-btn" onclick="openAlarmModal()">+ Adicionar alarme</button>
+  </div>
+
+  <!-- AMBER -->
+  <div class="tab" id="amber">
+    <div class="amber-hero">
+      <div class="amber-avatar">🎮</div>
+      <div class="amber-name">Amber Parker</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;font-style:italic">"A gamer misteriosa que ninguém sabe se é real"</div>
+      <div class="metric-row">
+        <div class="metric-pill"><div class="metric-num" id="amb-followers">0</div><div class="metric-lbl">Seguidores</div></div>
+        <div class="metric-pill"><div class="metric-num" id="amb-posts">0</div><div class="metric-lbl">Posts</div></div>
+        <div class="metric-pill"><div class="metric-num">1k</div><div class="metric-lbl">Meta 60d</div></div>
+      </div>
+    </div>
+    <div class="section-title">📅 Posts desta semana</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:12px">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:9px">Marque os dias que postou:</div>
+      <div style="display:flex;gap:5px" id="post-days"></div>
+      <div style="margin-top:10px;font-size:12px;color:var(--muted)">Meta: 5x por semana · TikTok ama quem posta muito 🔥</div>
+    </div>
+    <div class="section-title">📊 Atualizar métricas</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:12px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+        <div>
+          <label style="font-size:11px;color:var(--muted);margin-bottom:4px;display:block">Seguidores</label>
+          <input type="number" id="amb-followers-input" placeholder="0" class="settings-input" style="font-size:20px;font-family:var(--fh);font-weight:700;text-align:center">
+        </div>
+        <div>
+          <label style="font-size:11px;color:var(--muted);margin-bottom:4px;display:block">Clientes Carlos</label>
+          <input type="number" id="clients-input" placeholder="0" class="settings-input" style="font-size:20px;font-family:var(--fh);font-weight:700;text-align:center">
+        </div>
+      </div>
+      <button onclick="saveMetrics()" class="save-btn">Salvar métricas</button>
+    </div>
+    <div class="section-title">🎬 Tipos de vídeo</div>
+    <div id="video-types"></div>
+    <div style="height:16px"></div>
+  </div>
+
+  <!-- CHAT -->
+  <div class="tab" id="chat">
+    <div id="chat-locked-view" class="chat-locked">
+      <div class="lock-icon">🤖</div>
+      <div style="font-family:var(--fh);font-size:18px;font-weight:700">Mentor IA pessoal</div>
+      <p>Configure sua chave de API (OpenAI ou Abacus) na aba <strong>⚙️ Config</strong> para ativar seu mentor.</p>
+      <button onclick="switchTab('settings')">Ir para Config →</button>
+    </div>
+    <div id="messages" style="display:none"></div>
+    <div id="chat-bar" style="display:none">
+      <textarea id="chat-input" rows="1" placeholder="Pergunte ao seu mentor..."></textarea>
+      <button id="send-btn" onclick="sendMessage()">↑</button>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="tab" id="settings">
+
+    <div class="settings-section">
+      <h3>☁️ Supabase — Salvar na nuvem</h3>
+      <div class="settings-row">
+        <label>Project URL</label>
+        <input type="text" id="sb-url" class="settings-input" placeholder="https://xxxx.supabase.co">
+      </div>
+      <div class="settings-row">
+        <label>Anon Key (public)</label>
+        <input type="password" id="sb-key" class="settings-input" placeholder="eyJ...">
+      </div>
+      <button class="save-btn" onclick="saveSupabase()">Conectar Supabase</button>
+      <div class="status-msg" id="sb-status"></div>
+    </div>
+
+    <div class="settings-section">
+      <h3>🤖 Agente de IA</h3>
+      <div style="background:rgba(92,207,176,.1);border:1px solid rgba(92,207,176,.3);border-radius:12px;padding:14px;display:flex;align-items:center;gap:10px">
+        <div style="font-size:28px">⚡</div>
+        <div>
+          <div style="font-weight:700;color:var(--accent2)">Groq AI Ativo</div>
+          <div style="font-size:11px;color:var(--muted)">Llama 3.3 70B — Gratuito e rápido</div>
+        </div>
+        <div style="margin-left:auto;width:10px;height:10px;border-radius:50%;background:var(--accent2)"></div>
+      </div>
+      <div class="status-msg" id="ai-status"></div>
+    </div>
+
+    <div class="settings-section">
+      <h3>📆 Semana atual do plano</h3>
+      <div style="display:flex;align-items:center;gap:10px">
+        <button onclick="changeWeek(-1)" style="width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);color:var(--text);font-size:20px;cursor:pointer">−</button>
+        <div style="flex:1;text-align:center">
+          <div style="font-family:var(--fh);font-size:32px;font-weight:800;color:var(--accent)" id="week-display">1</div>
+          <div style="font-size:12px;color:var(--muted)" id="week-label-display">de 12 semanas</div>
+        </div>
+        <button onclick="changeWeek(1)" style="width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);color:var(--text);font-size:20px;cursor:pointer">+</button>
+      </div>
+    </div>
+
+    <div style="height:20px"></div>
+  </div>
+
+</div>
+
+
+<!-- DAY MODAL -->
+<div id="day-modal" class="day-modal" onclick="if(event.target===this)closeDayModal()">
+  <div class="day-modal-sheet">
+    <div class="day-modal-handle"></div>
+    <div class="day-modal-date" id="day-modal-date">27 de Maio</div>
+    <div class="day-modal-tema" id="day-modal-tema">📚 Semana 1 — Psicologia da venda</div>
+    <div class="day-modal-section">📝 Anotações do dia</div>
+    <textarea class="day-note-area" id="day-note-input" placeholder="O que aconteceu hoje? Resultados, aprendizados, ideias..."></textarea>
+    <button class="day-save-btn" onclick="saveDayNote()">💾 Salvar anotação</button>
+    <div class="day-modal-section">📋 Tarefas do dia</div>
+    <div id="day-modal-tasks"></div>
+  </div>
+</div>
+
+<!-- ALARM RINGING MODAL -->
+<div id="alarm-ringing">
+  <div class="ring-icon">⏰</div>
+  <div class="ring-time" id="ring-time">06:00</div>
+  <div class="ring-label" id="ring-label">Alarme</div>
+  <button class="ring-stop" onclick="stopAlarm()">⛔ Desligar</button>
+  <button class="ring-snooze" onclick="snoozeAlarm()">💤 Soneca (5 min)</button>
+</div>
+
+<!-- ALARM MODAL -->
+<div id="alarm-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Novo alarme</div>
+    <div class="time-picker">
+      <div class="time-part"><label>Hora</label><input type="number" class="time-input" id="alarm-hour" value="06" min="0" max="23"></div>
+      <div style="display:flex;align-items:flex-end;padding-bottom:11px;font-size:26px;font-weight:700;color:var(--muted)">:</div>
+      <div class="time-part"><label>Minuto</label><input type="number" class="time-input" id="alarm-min" value="00" min="0" max="59"></div>
+    </div>
+    <input type="text" class="label-input" id="alarm-label-input" placeholder="Ex: Estudar, Postar Amber...">
+    <button class="modal-save" onclick="saveAlarm()">Salvar alarme</button>
+    <button onclick="closeAlarmModal()" style="width:100%;padding:11px;background:none;border:none;color:var(--muted);font-size:13px;margin-top:7px;cursor:pointer">Cancelar</button>
+  </div>
+</div>
+
+<script>
+const PLAN = {
+  weeks:[
+    // JUNHO — Fundação
+    {n:1, mes:"Jun", mesN:6, tema:"Fundação Digital", desc:"Perfis otimizados, bio, identidade visual da Amber", meta:"Amber com 50 seguidores", cor:"#7c6af7",
+     acoes:["Criar/otimizar perfil TikTok da Amber","Definir identidade visual (foto, bio, cores)","Postar 7 vídeos — 1 por dia","Estudar: Como o TikTok funciona em 2026"],
+     link:"https://www.youtube.com/results?search_query=como+crescer+no+tiktok+2026+iniciante"},
+    {n:2, mes:"Jun", mesN:6, tema:"Consistência e Nicho", desc:"Definir nicho gamer + postar todo dia", meta:"100 seguidores Amber", cor:"#7c6af7",
+     acoes:["Postar 1 vídeo por dia da Amber","Testar 3 formatos diferentes (POV, duet, trend)","Prospectar 2 clientes Instagram","Estudar: Psicologia da venda"],
+     link:"https://www.youtube.com/results?search_query=nicho+tiktok+gamer+crescer"},
+    {n:3, mes:"Jun", mesN:6, tema:"Primeiro Cliente", desc:"Fechar 1º cliente de gestão Instagram", meta:"1 cliente fechado + 200 seguidores", cor:"#7c6af7",
+     acoes:["Prospectar 10 negócios locais no Instagram","Enviar proposta para pelo menos 3","Fechar 1 contrato (meta mínima)","Amber: testar trends virais da semana"],
+     link:"https://www.youtube.com/results?search_query=como+prospectar+clientes+instagram+social+media"},
+    {n:4, mes:"Jun", mesN:6, tema:"Entregar e Crescer", desc:"Entregar resultado pro cliente + crescer Amber", meta:"Amber 300 seguidores + 1 cliente ativo", cor:"#7c6af7",
+     acoes:["Fazer onboarding do cliente","Criar 1 mês de conteúdo para o cliente","Amber: analisar métricas, dobrar o que funcionou","Revisão do mês de Junho"],
+     link:"https://www.youtube.com/results?search_query=onboarding+cliente+social+media+gestor"},
+
+    // JULHO — Aceleração
+    {n:5, mes:"Jul", mesN:7, tema:"Algoritmo TikTok", desc:"Entender e hackear o algoritmo em 2026", meta:"Amber 500 seguidores", cor:"#5ccfb0",
+     acoes:["Estudar algoritmo TikTok 2026 a fundo","Postar nos melhores horários (19h-21h)","Usar trends + sounds virais","Prospectar 2º cliente"],
+     link:"https://www.youtube.com/results?search_query=algoritmo+tiktok+2026+como+funciona"},
+    {n:6, mes:"Jul", mesN:7, tema:"Viral e Hooks", desc:"Criar vídeos com potencial viral, dominar os hooks", meta:"Amber 700 seguidores + 1 vídeo viral", cor:"#5ccfb0",
+     acoes:["Estudar os 3 primeiros segundos que param o scroll","Criar 5 vídeos com hooks fortes","Tentar 1 duet com conta grande","Fechar 2º cliente"],
+     link:"https://www.youtube.com/results?search_query=hook+tiktok+viral+primeiros+segundos"},
+    {n:7, mes:"Jul", mesN:7, tema:"Escalar Clientes", desc:"2 clientes ativos + prospecção contínua", meta:"2 clientes + Amber 900 seguidores", cor:"#5ccfb0",
+     acoes:["Criar processo de entrega escalável","Usar IA para criar conteúdo dos clientes mais rápido","Amber: colaboração com outros criadores","Estudar: Precificação e contrato"],
+     link:"https://www.youtube.com/results?search_query=escalar+agencia+social+media+processos"},
+    {n:8, mes:"Jul", mesN:7, tema:"Revisão e Ajustes", desc:"O que está funcionando? Dobrar a aposta", meta:"Amber 1000 seguidores 🎯", cor:"#5ccfb0",
+     acoes:["Analisar todos os vídeos — quais performaram?","Revisar estratégia de clientes","Celebrar 1000 seguidores da Amber!","Planejar Agosto com metas claras"],
+     link:"https://www.youtube.com/results?search_query=análise+métricas+tiktok+crescimento"},
+
+    // AGOSTO — Monetização
+    {n:9, mes:"Ago", mesN:8, tema:"Funil de Vendas", desc:"Criar funil para atrair clientes automaticamente", meta:"3 clientes ativos + Amber 1200 seg", cor:"#f7b26a",
+     acoes:["Criar página de vendas dos seus serviços","Fazer 1 post por semana sobre gestão de Instagram","Amber: Começar a planejar TikTok Shop","Estudar: Funis de venda"],
+     link:"https://www.youtube.com/results?search_query=funil+de+vendas+social+media+instagram"},
+    {n:10, mes:"Ago", mesN:8, tema:"Tráfego Pago Básico", desc:"Primeiro anúncio para atrair clientes", meta:"Amber 1400 seg + 1 cliente via anúncio", cor:"#f7b26a",
+     acoes:["Criar conta no Meta Ads","Fazer 1 anúncio simples R$10/dia","Amber: Stories + lives curtas","Estudar: Pedro Sobral — tráfego pago"],
+     link:"https://www.youtube.com/results?search_query=pedro+sobral+trafego+pago+iniciante"},
+    {n:11, mes:"Ago", mesN:8, tema:"Posicionamento Premium", desc:"Aumentar preço, atrair clientes melhores", meta:"Renda R$2.000/mês + Amber 1600 seg", cor:"#f7b26a",
+     acoes:["Reposicionar preços (subir 30%)","Criar cases de resultados dos clientes","Amber: Preparar estratégia para TikTok Shop","Estudar: Como se posicionar como especialista"],
+     link:"https://www.youtube.com/results?search_query=posicionamento+premium+social+media+preço"},
+    {n:12, mes:"Ago", mesN:8, tema:"Revisão Q2", desc:"Resultados de Junho-Agosto + planejamento final", meta:"Amber 1800 seg + R$2.500/mês", cor:"#f7b26a",
+     acoes:["Revisar todo o trimestre","Quais clientes renovaram? Quais saíram?","Amber: 200 seguidores para chegar aos 2000!","Definir estratégia final para Set-Dez"],
+     link:"https://www.youtube.com/results?search_query=revisão+trimestral+negócio+digital"},
+
+    // SETEMBRO — Escala
+    {n:13, mes:"Set", mesN:9, tema:"Amber para 2000", desc:"Sprint final para 2000 seguidores e TikTok Shop", meta:"🎯 2000 seguidores Amber!", cor:"#f06a6a",
+     acoes:["Postar 2x por dia na Amber","Usar todas as trends virais da semana","Colaborações e duets estratégicos","Estudar: TikTok Shop como funciona"],
+     link:"https://www.youtube.com/results?search_query=tiktok+shop+brasil+como+funciona+2026"},
+    {n:14, mes:"Set", mesN:9, tema:"Abrir TikTok Shop 🏪", desc:"Configurar a loja e fazer primeiras vendas", meta:"TikTok Shop ativo + primeira venda", cor:"#f06a6a",
+     acoes:["Abrir TikTok Shop (requer 2000 seg)","Cadastrar primeiros produtos (afiliados)","Criar conteúdo de review/unboxing","Divulgar para seguidores fiéis"],
+     link:"https://www.youtube.com/results?search_query=como+abrir+tiktok+shop+brasil+afiliados"},
+    {n:15, mes:"Set", mesN:9, tema:"Primeiras Vendas Shop", desc:"Focar em conversões na loja", meta:"10 vendas + R$3.000/mês total", cor:"#f06a6a",
+     acoes:["Criar vídeos de produto 3x por semana","Responder comentários sobre produtos","Continuar gestão de clientes (renda fixa)","Estudar: Como converter no TikTok Shop"],
+     link:"https://www.youtube.com/results?search_query=como+vender+tiktok+shop+dicas+conversão"},
+    {n:16, mes:"Set", mesN:9, tema:"Dupla Renda", desc:"Renda clientes + renda TikTok Shop simultâneas", meta:"R$3.500/mês (clientes + shop)", cor:"#f06a6a",
+     acoes:["Otimizar produtos que mais vendem","Aumentar frequência de posts de produto","Prospectar 4º cliente de gestão","Calcular ROI das duas frentes"],
+     link:"https://www.youtube.com/results?search_query=renda+múltipla+tiktok+shop+social+media"},
+
+    // OUTUBRO — Consolidação
+    {n:17, mes:"Out", mesN:10, tema:"Consolidar Shop", desc:"Escalar as vendas que estão funcionando", meta:"20 vendas/mês no Shop + R$4.000", cor:"#a855f7",
+     acoes:["Dobrar produção de vídeos de produto","Testar live commerce (live de vendas)","Amber: manter 2+ posts por dia","Estudar: Live commerce TikTok"],
+     link:"https://www.youtube.com/results?search_query=live+commerce+tiktok+como+fazer+vender"},
+    {n:18, mes:"Out", mesN:10, tema:"Live Commerce", desc:"Fazer lives de vendas — maior conversão do TikTok", meta:"1 live por semana + R$4.200", cor:"#a855f7",
+     acoes:["Fazer 1 live de vendas por semana","Preparar roteiro de live","Parceria com marcas para produto","Continuar gestão de clientes"],
+     link:"https://www.youtube.com/results?search_query=como+fazer+live+tiktok+vender+produto"},
+    {n:19, mes:"Out", mesN:10, tema:"Parcerias e Afiliados", desc:"Fechar parcerias com marcas maiores", meta:"1 parceria fechada + R$4.500", cor:"#a855f7",
+     acoes:["Contatar 5 marcas para parceria","Criar mídia kit da Amber","Negociar comissões melhores no Shop","Estudar: Como negociar com marcas"],
+     link:"https://www.youtube.com/results?search_query=como+negociar+parceria+marca+criador+tiktok"},
+    {n:20, mes:"Out", mesN:10, tema:"Revisão e Aceleração", desc:"Analisar o que gera mais dinheiro e dobrar", meta:"R$4.800/mês 🔥", cor:"#a855f7",
+     acoes:["Quais produtos mais vendem? Focar neles","Quais clientes dão mais resultado? Focar neles","Eliminar o que não gera resultado","Planejar Black Friday (Novembro)"],
+     link:"https://www.youtube.com/results?search_query=black+friday+tiktok+shop+estratégia"},
+
+    // NOVEMBRO — Black Friday
+    {n:21, mes:"Nov", mesN:11, tema:"Black Friday Planning", desc:"Preparar ofertas e campanhas para BF", meta:"Estratégia BF pronta + R$4.800", cor:"#5ccfb0",
+     acoes:["Definir produtos para Black Friday","Criar conteúdo antecipado (hype)","Negociar comissões especiais","Preparar estoque de vídeos"],
+     link:"https://www.youtube.com/results?search_query=black+friday+tiktok+shop+como+vender+mais"},
+    {n:22, mes:"Nov", mesN:11, tema:"Black Friday Week", desc:"Executar a campanha — semana mais importante do ano", meta:"Recorde de vendas no Shop!", cor:"#5ccfb0",
+     acoes:["Postar 3x por dia na Amber","Fazer lives diárias durante a BF","Responder todos os comentários","Clientes: criar campanha BF para eles também"],
+     link:"https://www.youtube.com/results?search_query=black+friday+live+tiktok+resultados"},
+    {n:23, mes:"Nov", mesN:11, tema:"Pós Black Friday", desc:"Consolidar novos seguidores e clientes ganhos", meta:"R$5.000/mês 🏆", cor:"#5ccfb0",
+     acoes:["Analisar resultados da BF","Converter seguidores novos em fãs","Propor renovação/upgrade para clientes","Celebrar — você chegou em R$5.000!"],
+     link:"https://www.youtube.com/results?search_query=pós+black+friday+estratégia+redes+sociais"},
+    {n:24, mes:"Nov", mesN:11, tema:"Planejamento 2027", desc:"Fechar o ano e planejar o próximo nível", meta:"Plano 2027 pronto", cor:"#5ccfb0",
+     acoes:["Revisar TODO o ano de 2026","Quais metas foram atingidas?","Definir metas maiores para 2027","Descanso e gratidão 🙏"],
+     link:"https://www.youtube.com/results?search_query=planejamento+anual+2027+empreendedor+digital"},
+
+    // DEZEMBRO — Colheita
+    {n:25, mes:"Dez", mesN:12, tema:"Dezembro Forte", desc:"Natal e festas — oportunidade de vender muito", meta:"Manter R$5.000+ com bônus natal", cor:"#7c6af7",
+     acoes:["Criar conteúdo temático de natal para Amber","Campanhas de natal para clientes","Lives especiais de natal no TikTok","Prospectar clientes para Janeiro"],
+     link:"https://www.youtube.com/results?search_query=natal+tiktok+shop+vender+mais+dezembro"},
+    {n:26, mes:"Dez", mesN:12, tema:"Encerramento do Ano", desc:"Últimas semanas — fechar contratos e descansar", meta:"Contratos 2027 assinados 📝", cor:"#7c6af7",
+     acoes:["Renovar contratos de clientes para 2027","Fazer post de retrospectiva da Amber","Agradecer seguidores e parceiros","Descanso total e recarga para 2027 🎊"],
+     link:"https://www.youtube.com/results?search_query=retrospectiva+ano+criador+conteudo+tiktok"},
+  ],
+  // Tarefas por dia da semana (0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sáb)
+  tasksByDay:{
+    0:[ // Domingo - Revisão e descanso
+      {id:'review',text:'Revisar a semana completa',tag:'📊 Revisão',sub:'O que funcionou? O que melhorar? Anote tudo',link:'',linkLabel:''},
+      {id:'plan',text:'Planejar a próxima semana',tag:'📅 Planejamento',sub:'Monte sua lista de prioridades para os próximos 7 dias',link:'',linkLabel:''},
+      {id:'gratitude',text:'Gratidão e oração',tag:'🙏 Espiritual',sub:'Reserve 15min para agradecer e se conectar',link:'',linkLabel:''},
+      {id:'exercise',text:'Exercício leve (30min)',tag:'💪 Saúde',sub:'Caminhada, alongamento. Recuperação ativa',link:'https://www.youtube.com/results?search_query=alongamento+relaxamento',linkLabel:'🧘 Ver exercícios'},
+    ],
+    1:[ // Segunda - Foco em estudo e prospecção
+      {id:'study',text:'Estudar tema da semana (1h)',tag:'📚 Estudo',sub:'Leia, assista ou ouça. Anote os pontos principais',link:'',linkLabel:'🎥 Buscar no YouTube'},
+      {id:'prosp',text:'Prospectar 5 clientes novos',tag:'💼 Clientes',sub:'Envie DM para 5 perfis de pequenos negócios locais',link:'https://www.instagram.com/explore',linkLabel:'🔍 Explorar Instagram'},
+      {id:'amber',text:'Postar vídeo da Amber',tag:'🎮 Amber',sub:'1 vídeo curto 15-30s. Tema: rotina gamer misteriosa',link:'https://www.tiktok.com',linkLabel:'🎮 Abrir TikTok'},
+      {id:'exercise',text:'Treino (45min)',tag:'💪 Saúde',sub:'Academia ou treino em casa. Semana começa forte!',link:'https://www.youtube.com/results?search_query=treino+45+minutos',linkLabel:'🏋️ Ver treino'},
+    ],
+    2:[ // Terça - Criação de conteúdo
+      {id:'content_ig',text:'Criar post Instagram',tag:'📱 Instagram',sub:'1 post no feed com legenda de valor. Use Canva',link:'https://www.canva.com',linkLabel:'🎨 Abrir Canva'},
+      {id:'stories',text:'Fazer 5 stories',tag:'📱 Stories',sub:'Bastidores do dia, dica rápida, enquete com seguidores',link:'https://www.instagram.com',linkLabel:'📸 Abrir Instagram'},
+      {id:'amber',text:'Postar vídeo da Amber',tag:'🎮 Amber',sub:'Terça tem muito alcance no TikTok — aproveite!',link:'https://www.tiktok.com',linkLabel:'🎮 Abrir TikTok'},
+      {id:'study',text:'Estudar 30min',tag:'📚 Estudo',sub:'Revisão do conteúdo de ontem + anotações',link:'',linkLabel:''},
+    ],
+    3:[ // Quarta - Prospecção e vendas
+      {id:'prosp',text:'Prospectar 5 clientes',tag:'💼 Clientes',sub:'Quarta é ótimo dia para reuniões — tente agendar uma',link:'https://www.instagram.com/explore',linkLabel:'🔍 Buscar clientes'},
+      {id:'followup',text:'Follow-up nos contatos',tag:'💼 Vendas',sub:'Responda quem te ignorou antes. Seja persistente!',link:'',linkLabel:''},
+      {id:'amber',text:'Postar Amber + interagir',tag:'🎮 Amber',sub:'Poste e responda comentários por 20min — alimenta o algoritmo',link:'https://www.tiktok.com',linkLabel:'🎮 Abrir TikTok'},
+      {id:'exercise',text:'Exercício (30min)',tag:'💪 Saúde',sub:'Meio da semana — mantenha a energia alta',link:'https://www.youtube.com/results?search_query=treino+30+minutos+casa',linkLabel:'🏋️ Ver treino'},
+    ],
+    4:[ // Quinta - Conteúdo e estudo avançado
+      {id:'study',text:'Estudar tema da semana (1h)',tag:'📚 Estudo',sub:'Aprofunde no tema. Pesquise cases de sucesso',link:'',linkLabel:'🎥 Ver no YouTube'},
+      {id:'content_ig',text:'Criar conteúdo Instagram',tag:'📱 Instagram',sub:'Carrossel ou reels. Quinta tem bom alcance',link:'https://www.canva.com',linkLabel:'🎨 Abrir Canva'},
+      {id:'amber',text:'Postar Amber',tag:'🎮 Amber',sub:'Quinta é top para viral — capriche no hook dos 3 primeiros segundos',link:'https://www.tiktok.com',linkLabel:'🎮 Abrir TikTok'},
+      {id:'metrics',text:'Atualizar métricas',tag:'📊 Dados',sub:'Seguidores Amber, clientes, progresso geral. Anote tudo',link:'',linkLabel:''},
+    ],
+    5:[ // Sexta - Sprint final da semana
+      {id:'prosp',text:'Prospectar + fechar cliente',tag:'💼 Clientes',sub:'Sexta é dia de resultado! Tente fechar algo hoje',link:'https://www.instagram.com/explore',linkLabel:'🔍 Buscar clientes'},
+      {id:'amber',text:'Postar Amber (melhor dia!)',tag:'🎮 Amber',sub:'Sexta à tarde/noite tem o MAIOR alcance do TikTok',link:'https://www.tiktok.com',linkLabel:'🎮 Abrir TikTok'},
+      {id:'content_ig',text:'Post + stories Instagram',tag:'📱 Instagram',sub:'Finalize a semana com conteúdo de valor',link:'https://www.canva.com',linkLabel:'🎨 Abrir Canva'},
+      {id:'exercise',text:'Treino (45min)',tag:'💪 Saúde',sub:'Termina a semana com tudo! Você merece',link:'https://www.youtube.com/results?search_query=treino+sexta',linkLabel:'🏋️ Ver treino'},
+    ],
+    6:[ // Sábado - Conteúdo em massa
+      {id:'batch',text:'Gravar 3 vídeos da Amber',tag:'🎮 Amber',sub:'Grave em lote! Use o sábado pra adiantar a semana',link:'https://www.tiktok.com',linkLabel:'🎮 Abrir TikTok'},
+      {id:'content_batch',text:'Criar 3 posts Instagram',tag:'📱 Instagram',sub:'Faça em lote no Canva — deixe agendado pro app',link:'https://www.canva.com',linkLabel:'🎨 Abrir Canva'},
+      {id:'study',text:'Estudar 1h (tema da semana)',tag:'📚 Estudo',sub:'Fim de semana é ótimo pra aprender sem interrupção',link:'',linkLabel:'🎥 Buscar no YouTube'},
+      {id:'rest',text:'Descanse e recarregue',tag:'🛋️ Descanso',sub:'Você é humano. Cuide da sua saúde mental também',link:'',linkLabel:''},
+    ],
+  },
+  // Tarefas extras por semana do plano (sobrescreve ou adiciona)
+  weekTasks:{
+    1:{study:{link:'https://www.youtube.com/results?search_query=como+crescer+tiktok+2026+iniciante',linkLabel:'🎥 Crescer no TikTok 2026'}},
+    2:{study:{link:'https://www.youtube.com/results?search_query=nicho+tiktok+gamer+crescer',linkLabel:'🎥 Nicho Gamer TikTok'}},
+    3:{study:{link:'https://www.youtube.com/results?search_query=como+prospectar+clientes+instagram',linkLabel:'🎥 Prospectar Clientes'}},
+    4:{study:{link:'https://www.youtube.com/results?search_query=onboarding+cliente+social+media',linkLabel:'🎥 Onboarding Cliente'}},
+    5:{study:{link:'https://www.youtube.com/results?search_query=algoritmo+tiktok+2026+como+funciona',linkLabel:'🎥 Algoritmo TikTok'}},
+    6:{study:{link:'https://www.youtube.com/results?search_query=hook+tiktok+viral+primeiros+segundos',linkLabel:'🎥 Hooks Virais TikTok'}},
+    7:{study:{link:'https://www.youtube.com/results?search_query=escalar+agencia+social+media',linkLabel:'🎥 Escalar Agência'}},
+    8:{study:{link:'https://www.youtube.com/results?search_query=análise+métricas+tiktok',linkLabel:'📊 Analisar Métricas'}},
+    9:{study:{link:'https://www.youtube.com/results?search_query=funil+vendas+social+media',linkLabel:'🎥 Funil de Vendas'}},
+    10:{study:{link:'https://www.youtube.com/results?search_query=pedro+sobral+trafego+pago+iniciante',linkLabel:'🎥 Pedro Sobral - Tráfego'}},
+    11:{study:{link:'https://www.youtube.com/results?search_query=posicionamento+premium+social+media',linkLabel:'🎥 Posicionamento Premium'}},
+    12:{study:{link:'https://www.youtube.com/results?search_query=revisão+negócio+digital+trimestral',linkLabel:'📊 Revisão Trimestral'}},
+    13:{study:{link:'https://www.youtube.com/results?search_query=tiktok+shop+brasil+como+funciona+2026',linkLabel:'🎥 TikTok Shop Brasil'}},
+    14:{study:{link:'https://www.youtube.com/results?search_query=como+abrir+tiktok+shop+brasil',linkLabel:'🎥 Abrir TikTok Shop'}},
+    15:{study:{link:'https://www.youtube.com/results?search_query=como+vender+tiktok+shop+dicas',linkLabel:'🎥 Vender no TikTok Shop'}},
+    16:{study:{link:'https://www.youtube.com/results?search_query=renda+múltipla+criador+conteudo',linkLabel:'🎥 Renda Múltipla'}},
+    17:{study:{link:'https://www.youtube.com/results?search_query=live+commerce+tiktok+como+fazer',linkLabel:'🎥 Live Commerce'}},
+    18:{study:{link:'https://www.youtube.com/results?search_query=como+fazer+live+tiktok+vender',linkLabel:'🎥 Lives de Venda'}},
+    19:{study:{link:'https://www.youtube.com/results?search_query=como+negociar+parceria+marca+tiktok',linkLabel:'🎥 Parcerias com Marcas'}},
+    20:{study:{link:'https://www.youtube.com/results?search_query=black+friday+tiktok+shop+estrategia',linkLabel:'🎥 Estratégia Black Friday'}},
+    21:{study:{link:'https://www.youtube.com/results?search_query=black+friday+tiktok+shop+como+vender',linkLabel:'🎥 Black Friday TikTok'}},
+    22:{study:{link:'https://www.youtube.com/results?search_query=live+black+friday+tiktok+resultados',linkLabel:'🎥 Lives Black Friday'}},
+    23:{study:{link:'https://www.youtube.com/results?search_query=pós+black+friday+estratégia',linkLabel:'🎥 Pós Black Friday'}},
+    24:{study:{link:'https://www.youtube.com/results?search_query=planejamento+2027+empreendedor',linkLabel:'🎥 Planejamento 2027'}},
+    25:{study:{link:'https://www.youtube.com/results?search_query=natal+tiktok+shop+vender+dezembro',linkLabel:'🎥 Vendas de Natal'}},
+    26:{study:{link:'https://www.youtube.com/results?search_query=retrospectiva+ano+criador+conteudo',linkLabel:'🎥 Retrospectiva do Ano'}},
+  },
+  motivations:[
+    '🔥 Cada ação de hoje é um tijolo do seu império!',
+    '💪 Consistência bate talento quando o talento não é consistente.',
+    '🚀 Você não tá atrasado. Você tá exatamente onde precisa estar.',
+    '🎯 Foco no processo. Os resultados vêm com o tempo.',
+    '⚡ Um dia de cada vez. Hoje é o único dia que importa.',
+    '🌟 Seu futuro eu vai agradecer pelo esforço de hoje.',
+    '💡 Pequenas ações diárias = grandes resultados no final.',
+    '🙏 Deus abençoa quem age com fé e consistência.',
+    '🎯 3 clientes. 1000 seguidores. Você consegue!',
+    '🔑 Disciplina é o preço do sucesso. Pague com alegria.',
+    '🌅 Hoje é mais um dia de construir o Carlos de amanhã.',
+    '⚡ Poste. Prospecte. Estude. Repita.',
+  ]
+};
+
+// DEFAULT STATE
+const DEFAULT = {
+  currentWeek:1,streak:0,lastLogin:null,
+  amberFollowers:0,amberPosts:0,clients:0,
+  tasksDone:{},postDays:{},
+  alarms:[
+    {id:1,hour:'06',min:'00',label:'Acordar e orar',on:true},
+    {id:2,hour:'07',min:'00',label:'Estudar tema da semana',on:true},
+    {id:3,hour:'18',min:'00',label:'Postar vídeo Amber',on:true},
+    {id:4,hour:'22',min:'00',label:'Revisar o dia',on:true},
+  ],
+  sbUrl:'https://kmidlbvruhdmqloakqud.supabase.co',sbKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImttaWRsYnZydWhkbXFsb2FrcXVkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4NDk0MzMsImV4cCI6MjA5NTQyNTQzM30.1YI1Fb7ClzDS0A08MCTz6QmXY42zi_NlCJxUAluh41Q',aiProvider:'groq',openaiKey:'',abacusKey:'',abacusDeployment:''
+};
+
+let state = {...DEFAULT,...JSON.parse(localStorage.getItem('carlos_v2')||'{}')};
+let sb = null;
+let chatHistory = [];
+let aiActive = false;
+
+function save() {
+  localStorage.setItem('carlos_v2', JSON.stringify(state));
+  if (sb) syncToSupabase();
+}
+
+// ─── SUPABASE ───
+async function initSupabase() {
+  if (!state.sbUrl || !state.sbKey) { setSyncStatus('local',''); return; }
+  try {
+    sb = supabase.createClient(state.sbUrl, state.sbKey);
+    setSyncStatus('loading','sync...');
+    const {data,error} = await sb.from('carlos_data').select('data').eq('id','state').single();
+    if (error && error.code !== 'PGRST116') throw error;
+    if (data && data.data && Object.keys(data.data).length > 0) {
+      const remote = data.data;
+      // Salva chaves locais antes do merge
+      const localSbUrl = state.sbUrl;
+      const localSbKey = state.sbKey;
+      // merge: remote wins for most things
+      state = {...state,...remote};
+      // Restaura chaves locais (nunca sobrescrever com dados do banco)
+      state.sbUrl = localSbUrl;
+      state.sbKey = localSbKey;
+      localStorage.setItem('carlos_v2', JSON.stringify(state));
+    }
+    setSyncStatus('ok','nuvem ✓');
+    refreshAll();
+  } catch(e) {
+    setSyncStatus('err','erro ⚡');
+    console.error('Supabase init error:', e);
+  }
+}
+
+async function syncToSupabase() {
+  if (!sb) return;
+  try {
+    const payload = {...state};
+    delete payload.sbKey; // don't store key in DB
+    await sb.from('carlos_data').upsert({id:'state',data:payload,updated_at:new Date().toISOString()});
+    setSyncStatus('ok','salvo ✓');
+  } catch(e) {
+    setSyncStatus('err','erro sync');
+  }
+}
+
+function setSyncStatus(type, text) {
+  const dot = document.getElementById('sync-dot');
+  const txt = document.getElementById('sync-text');
+  dot.className = 'sync-dot '+type;
+  txt.textContent = text;
+}
+
+async function saveSupabase() {
+  const url = document.getElementById('sb-url').value.trim();
+  const key = document.getElementById('sb-key').value.trim();
+  if (!url.includes('supabase.co')) { showStatus('sb-status','❌ URL inválida. Ex: https://xxx.supabase.co','var(--danger)'); return; }
+  if (!key.startsWith('eyJ')) { showStatus('sb-status','❌ Anon key inválida. Começa com eyJ...','var(--danger)'); return; }
+  state.sbUrl = url; state.sbKey = key;
+  localStorage.setItem('carlos_v2', JSON.stringify(state));
+  showStatus('sb-status','⏳ Conectando...','var(--accent3)');
+  sb = supabase.createClient(url, key);
+  try {
+    const {error} = await sb.from('carlos_data').upsert({id:'state',data:{...state},updated_at:new Date().toISOString()});
+    if (error) throw error;
+    showStatus('sb-status','✅ Conectado! Dados salvando na nuvem.','var(--accent2)');
+    setSyncStatus('ok','nuvem ✓');
+  } catch(e) {
+    showStatus('sb-status','❌ Erro: '+e.message,'var(--danger)');
+    setSyncStatus('err','erro');
+  }
+}
+
+// ─── AI CONFIG ───
+function selectAI(provider) {
+  state.aiProvider = provider;
+  document.getElementById('opt-openai').classList.toggle('selected', provider==='openai');
+  document.getElementById('opt-abacus').classList.toggle('selected', provider==='abacus');
+  document.getElementById('openai-fields').style.display = provider==='openai' ? 'block' : 'none';
+  document.getElementById('abacus-fields').style.display = provider==='abacus' ? 'block' : 'none';
+}
+
+function saveAIConfig() {
+  const p = state.aiProvider;
+  if (p==='openai') {
+    const k = document.getElementById('openai-key').value.trim();
+    if (!k.startsWith('sk-')) { showStatus('ai-status','❌ Chave OpenAI inválida. Começa com sk-','var(--danger)'); return; }
+    state.openaiKey = k;
+  } else {
+    const k = document.getElementById('abacus-key').value.trim();
+    if (!k) { showStatus('ai-status','❌ Digite sua chave Abacus','var(--danger)'); return; }
+    state.abacusKey = k;
+    state.abacusDeployment = document.getElementById('abacus-deployment').value.trim();
+  }
+  save();
+  showStatus('ai-status','✅ IA configurada! Vá na aba Mentor IA 🤖','var(--accent2)');
+  setTimeout(()=>setupChat(), 800);
+}
+
+function showStatus(id, msg, color) {
+  const el = document.getElementById(id);
+  el.textContent = msg; el.style.color = color;
+}
+
+// ─── CHAT / AI ───
+function setupChat() {
+  // Claude sempre disponível
+  
+  aiActive = true;
+  
+  document.getElementById('chat-locked-view').style.display = aiActive ? 'none' : 'flex';
+  document.getElementById('messages').style.display = aiActive ? 'flex' : 'none';
+  document.getElementById('chat-bar').style.display = aiActive ? 'flex' : 'none';
+  
+  if (chatHistory.length===0) {
+    const week = PLAN.weeks[state.currentWeek-1];
+    const badge = '<div class="ai-badge claude">⚡ Groq Mentor</div>';
+    addMsg('assistant', `Eai Carlos! 👋 Sou seu mentor de IA pessoal.\n\nVocê tá na **Semana ${state.currentWeek}: ${week.tema}**. Streak: **${state.streak} dias** 🔥\n\nComo posso te ajudar hoje?`, badge);
+  }
+}
+
+function addMsg(role, text, badgeHtml='') {
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className = 'msg '+role;
+  const now = new Date();
+  const t = String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+  const formatted = text.replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  div.innerHTML = (badgeHtml||'') + `<div class="msg-bubble">${formatted}</div><div class="msg-time">${t}</div>`;
+  msgs.appendChild(div);
+  chatHistory.push({role, content: text});
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className='msg assistant'; div.id='typing-msg';
+  div.innerHTML='<div class="msg-bubble"><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>';
+  msgs.appendChild(div); msgs.scrollTop=msgs.scrollHeight;
+}
+function removeTyping() { const el=document.getElementById('typing-msg'); if(el) el.remove(); }
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text || !aiActive) return;
+  addMsg('user', text);
+  input.value=''; input.style.height='auto';
+  document.getElementById('send-btn').disabled=true;
+  showTyping();
+
+  const week = PLAN.weeks[state.currentWeek-1];
+  const systemPrompt = `Você é o mentor pessoal de IA do Carlos Alberto, empreendedor digital brasileiro 2026.
+CONTEXTO: Semana ${state.currentWeek}/12 — ${week.tema}. Mês ${week.mes}. Streak: ${state.streak} dias.
+Gerencia influencer virtual "Amber Parker" (gamer girl TikTok, ${state.amberFollowers} seguidores).
+Meta: 3 clientes gestão Instagram (R$500-800/mês). Atual: ${state.clients} clientes.
+Cristão, tem filhos, muito motivado. Ex-motorista Uber migrando pro digital.
+Seja direto, motivador, prático. Português BR casual. Máximo 120 palavras.`;
+
+  const messages = chatHistory.slice(-10)
+    .map(m=>({role:m.role==='assistant'?'assistant':'user', content:m.content}));
+
+  try {
+    const reply = await callClaude(systemPrompt, messages);
+    removeTyping();
+    addMsg('assistant', reply, '<div class="ai-badge claude">⚡ Groq Mentor</div>');
+  } catch(e) {
+    removeTyping();
+    addMsg('assistant', '⚠️ Erro: '+e.message);
+  }
+  document.getElementById('send-btn').disabled=false;
+}
+
+async function callClaude(system, messages) {
+  const GROQ_KEY = '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';
+  const msgs = messages.length > 0 ? messages : [{role:'user',content:'Oi'}];
+  // Garante que começa com user
+  const filtered = msgs.filter(m=>m.role==='user'||m.role==='assistant');
+  const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'Authorization':'Bearer '+GROQ_KEY
+    },
+    body: JSON.stringify({
+      model:'llama-3.3-70b-versatile',
+      max_tokens:400,
+      messages:[{role:'system',content:system},...filtered]
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(data.error.message);
+  return data.choices[0].message.content;
+}
+
+// ─── TABS ───
+function switchTab(name) {
+  const tabs={dash:0,cal:1,alarm:2,amber:3,chat:4,settings:5};
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===tabs[name]));
+  document.querySelectorAll('.nav-btn').forEach((b,i)=>b.classList.toggle('active',i===tabs[name]));
+  if(name==='chat') setupChat();
+}
+
+
+// ─── TAREFAS INTELIGENTES ───
+function getTodayTasks() {
+  const dayOfWeek = new Date().getDay(); // 0=Dom ... 6=Sab
+  const week = state.currentWeek;
+  let tasks = JSON.parse(JSON.stringify(PLAN.tasksByDay[dayOfWeek] || []));
+  
+  // Aplicar links específicos da semana
+  const weekOverride = PLAN.weekTasks[week] || {};
+  tasks = tasks.map(task => {
+    const override = weekOverride[task.id];
+    if(override){
+      if(override.link) task.link = override.link;
+      if(override.linkLabel) task.linkLabel = override.linkLabel;
+    }
+    // Se o link for vazio mas for tarefa de estudo, gera link com tema da semana
+    if(task.id === 'study' && !task.link){
+      const tema = PLAN.weeks[week-1].tema;
+      task.link = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(tema);
+      task.linkLabel = '🎥 Buscar: ' + tema;
+    }
+    return task;
+  });
+  return tasks;
+}
+
+// ─── DASHBOARD ───
+function initDash() {
+  const today = new Date().toDateString();
+  if (state.lastLogin !== today) {
+    const yesterday = new Date(Date.now()-86400000).toDateString();
+    state.streak = state.lastLogin===yesterday ? state.streak+1 : 1;
+    state.lastLogin = today;
+    state.tasksDone[today] = state.tasksDone[today]||{};
+    save();
+  }
+  document.getElementById('stat-dias').textContent = state.streak;
+  document.getElementById('stat-amber').textContent = state.amberFollowers;
+  document.getElementById('stat-clients').textContent = state.clients||0;
+
+  const w = PLAN.weeks[state.currentWeek-1];
+  document.getElementById('cur-week').textContent = state.currentWeek;
+  document.getElementById('cur-month').textContent = w.mes;
+  document.getElementById('focus-badge').textContent = 'S'+state.currentWeek;
+  document.getElementById('focus-name').textContent = w.tema;
+  document.getElementById('focus-desc').textContent = w.desc;
+  document.getElementById('week-display').textContent = state.currentWeek;
+
+  const pct = Math.round((state.currentWeek/12)*100);
+  document.getElementById('prog-pct').textContent = pct+'%';
+  document.getElementById('prog-bar').style.width = pct+'%';
+
+  const todayTasks = getTodayTasks();
+  const done = state.tasksDone[today]||{};
+  const doneCount = todayTasks.filter(t=>done[t.id]).length;
+  const pct = todayTasks.length > 0 ? Math.round((doneCount/todayTasks.length)*100) : 0;
+  document.getElementById('stat-tasks').textContent = pct+'%';
+
+  // Motivação do dia
+  const motEl = document.getElementById('motivation-bar');
+  if(motEl){ const idx=new Date().getDay()%PLAN.motivations.length; motEl.textContent=PLAN.motivations[idx]; }
+
+  // Nome do dia
+  const dayNames = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const dayName = dayNames[new Date().getDay()];
+
+  // Focus tasks expandíveis
+  const focusList = document.getElementById('focus-tasks-list');
+  const focusPct = document.getElementById('focus-pct');
+  const focusFill = document.getElementById('focus-prog-fill');
+  if(focusPct) focusPct.textContent = pct+'%';
+  if(focusFill) focusFill.style.width = pct+'%';
+  if(focusList){
+    focusList.innerHTML = `<div style="font-size:11px;color:var(--accent3);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">📅 ${dayName} — ${todayTasks.length} tarefas</div>`;
+    todayTasks.forEach(task=>{
+      const isDone = done[task.id];
+      const row = document.createElement('div');
+      row.className = 'focus-task-row';
+      row.innerHTML = `
+        <div class="focus-task-check ${isDone?'done':''}" id="chk-${task.id}">${isDone?'✓':''}</div>
+        <div class="focus-task-info">
+          <div class="focus-task-name ${isDone?'done':''}">${task.tag} ${task.text}</div>
+          <div class="focus-task-sub">${task.sub||''}</div>
+          ${task.link?`<a class="focus-task-link" href="${task.link}" target="_blank" onclick="event.stopPropagation()">${task.linkLabel}</a>`:''}
+        </div>`;
+      row.querySelector('.focus-task-check').addEventListener('click', e=>{
+        e.stopPropagation();
+        state.tasksDone[today]=state.tasksDone[today]||{};
+        state.tasksDone[today][task.id]=!state.tasksDone[today][task.id];
+        save(); syncToSupabase(); initDash();
+      });
+      focusList.appendChild(row);
+    });
+  }
+
+  const container = document.getElementById('daily-tasks');
+  if(container) container.innerHTML='';
+}
+
+function toggleFocusTasks() {
+  const list = document.getElementById('focus-tasks-list');
+  const arrow = document.getElementById('focus-arrow');
+  list.classList.toggle('open');
+  arrow.textContent = list.classList.contains('open') ? '▲' : '▼';
+}
+
+function changeWeek(d) {
+  state.currentWeek = Math.max(1, Math.min(12, state.currentWeek+d));
+  save(); initDash();
+}
+
+// ─── CALENDAR ───
+function initCalendar() {
+  const now=new Date(), y=now.getFullYear(), m=now.getMonth();
+  const months=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  document.getElementById('cal-month-title').textContent = months[m]+' '+y;
+  const grid=document.getElementById('cal-grid');
+  const days=['D','S','T','Q','Q','S','S'];
+  grid.innerHTML=days.map(d=>`<div class="cal-day-name">${d}</div>`).join('');
+  const firstDay=new Date(y,m,1).getDay(), daysInMonth=new Date(y,m+1,0).getDate(), todayD=now.getDate();
+  for(let i=0;i<firstDay;i++) grid.innerHTML+=`<div class="cal-day empty"></div>`;
+  for(let d=1;d<=daysInMonth;d++) {
+    const dateObj = new Date(y,m,d);
+    const dateKey = dateObj.toDateString();
+    const isT=d===todayD, isPast=d<todayD;
+    const hasNote = state.notes && state.notes[dateKey];
+    const hasTasks = state.tasksDone && state.tasksDone[dateKey] && Object.values(state.tasksDone[dateKey]).some(Boolean);
+    // Descobre o tema da semana para esse dia
+    const weekNum = getWeekNumForDate(dateObj);
+    const weekData = weekNum ? PLAN.weeks[weekNum-1] : null;
+    const temaShort = weekData ? weekData.tema.split(' ').slice(0,2).join(' ') : '';
+    const dayEl = document.createElement('div');
+    dayEl.className=`cal-day ${isT?'today':''} ${isPast&&!isT?'past':''} ${hasNote?'has-note':''} ${hasTasks?'has-tasks':''}`;
+    dayEl.innerHTML=`<span>${d}</span>${temaShort?`<span class="cal-day-tema">${temaShort}</span>`:''}`;
+    dayEl.onclick=()=>openDayModal(dateObj);
+    grid.appendChild(dayEl);
+  }
+  
+  // Cronograma completo Jun-Dez
+  const sc=document.getElementById('schedule-list');
+  sc.innerHTML='';
+  
+  // Agrupar por mês
+  const meses = {};
+  PLAN.weeks.forEach(w=>{
+    if(!meses[w.mes]) meses[w.mes] = {nome:w.mes, mesN:w.mesN, cor:w.cor, semanas:[]};
+    meses[w.mes].semanas.push(w);
+  });
+  
+  const mesNomes = {Jun:'Junho',Jul:'Julho',Ago:'Agosto',Set:'Setembro',Out:'Outubro',Nov:'Novembro',Dez:'Dezembro'};
+  
+  Object.values(meses).forEach(mes=>{
+    // Header do mês
+    const mHeader = document.createElement('div');
+    mHeader.style.cssText = `display:flex;align-items:center;gap:8px;margin:16px 0 8px;`;
+    mHeader.innerHTML = `
+      <div style="height:1px;flex:1;background:${mes.cor}44"></div>
+      <span style="font-size:11px;font-weight:800;color:${mes.cor};text-transform:uppercase;letter-spacing:1px">${mesNomes[mes.nome]||mes.nome}</span>
+      <div style="height:1px;flex:1;background:${mes.cor}44"></div>`;
+    sc.appendChild(mHeader);
+    
+    mes.semanas.forEach(w=>{
+      const active = w.n===state.currentWeek;
+      const done = w.n<state.currentWeek;
+      const div = document.createElement('div');
+      div.style.cssText = `background:var(--card);border:1px solid ${active?w.cor+'88':'var(--border)'};border-radius:14px;padding:13px;margin-bottom:8px;cursor:pointer;transition:all .2s;${active?'background:'+w.cor+'12;':''} ${done?'opacity:.55;':''}`;
+      div.innerHTML = `
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:${active?'10':'0'}px">
+          <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,${w.cor},${w.cor}88);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0">
+            ${done?'✓':'S'+w.n}
+          </div>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:700">${w.tema}</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:1px">${w.desc}</div>
+          </div>
+          ${active?`<span style="font-size:9px;font-weight:800;color:${w.cor};background:${w.cor}22;padding:3px 7px;border-radius:99px">ATUAL</span>`:''}
+        </div>
+        ${active||!done?`<div style="font-size:11px;color:${w.cor};font-weight:700;margin-top:6px;margin-bottom:4px">🎯 Meta: ${w.meta}</div>`:''}
+        ${active?`<div style="border-top:1px solid ${w.cor}33;padding-top:8px;margin-top:4px">
+          ${(w.acoes||[]).map(a=>`<div style="font-size:11px;color:var(--muted);padding:3px 0;display:flex;gap:6px"><span style="color:${w.cor}">▸</span>${a}</div>`).join('')}
+          ${w.link?`<a href="${w.link}" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;color:${w.cor};font-weight:700;background:${w.cor}18;padding:5px 10px;border-radius:99px;text-decoration:none">🎥 Estudar agora</a>`:''}
+        </div>`:''}`;
+      div.onclick=()=>{
+        state.currentWeek=w.n; save(); initDash(); initCalendar();
+        switchTab('dash');
+      };
+      sc.appendChild(div);
+    });
+  });
+}
+
+function getWeekNumForDate(date) {
+  // Calcula semana do plano baseada na data de início (1 Jan 2026)
+  const start = new Date('2026-01-05'); // segunda-feira
+  const diff = Math.floor((date - start) / (7*24*60*60*1000));
+  if(diff < 0 || diff >= 12) return null;
+  return diff + 1;
+}
+
+function openDayModal(dateObj) {
+  const months=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const dayNames=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const dateKey = dateObj.toDateString();
+  const weekNum = getWeekNumForDate(dateObj) || state.currentWeek;
+  const weekData = PLAN.weeks[weekNum-1];
+  
+  document.getElementById('day-modal-date').textContent = 
+    dayNames[dateObj.getDay()] + ', ' + dateObj.getDate() + ' de ' + months[dateObj.getMonth()];
+  document.getElementById('day-modal-tema').textContent = 
+    '📚 Semana ' + weekNum + ' — ' + weekData.tema;
+  
+  // Anotação existente
+  const note = state.notes && state.notes[dateKey] ? state.notes[dateKey] : '';
+  document.getElementById('day-note-input').value = note;
+  document.getElementById('day-note-input').dataset.dateKey = dateKey;
+  
+  // Tarefas do dia
+  const dayOfWeek = dateObj.getDay();
+  const tasks = PLAN.tasksByDay[dayOfWeek] || [];
+  const done = state.tasksDone && state.tasksDone[dateKey] ? state.tasksDone[dateKey] : {};
+  const taskContainer = document.getElementById('day-modal-tasks');
+  if(tasks.length > 0) {
+    taskContainer.innerHTML = tasks.map(t=>`
+      <div class="day-task-row">
+        <div class="day-task-dot" style="background:${done[t.id]?'var(--accent2)':'var(--muted)'}"></div>
+        <div class="day-task-txt" style="${done[t.id]?'text-decoration:line-through;color:var(--muted)':''}">${t.tag} ${t.text}</div>
+        ${done[t.id]?'<span style="color:var(--accent2);font-size:12px">✓</span>':''}
+      </div>`).join('');
+  } else {
+    taskContainer.innerHTML = '<div style="font-size:12px;color:var(--muted)">Sem tarefas registradas</div>';
+  }
+  
+  document.getElementById('day-modal').classList.add('open');
+}
+
+function closeDayModal() {
+  document.getElementById('day-modal').classList.remove('open');
+}
+
+function saveDayNote() {
+  const textarea = document.getElementById('day-note-input');
+  const dateKey = textarea.dataset.dateKey;
+  const note = textarea.value.trim();
+  if(!state.notes) state.notes = {};
+  if(note) {
+    state.notes[dateKey] = note;
+  } else {
+    delete state.notes[dateKey];
+  }
+  save(); syncToSupabase();
+  closeDayModal();
+  initCalendar();
+}
+
+// ─── ALARM ───
+let alarmAudioCtx = null;
+let alarmSoundNodes = [];
+let alarmRingingId = null;
+
+function getAudioCtx() {
+  if (!alarmAudioCtx || alarmAudioCtx.state === 'closed') {
+    alarmAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  return alarmAudioCtx;
+}
+
+function playAlarmSound() {
+  try {
+    const ctx = getAudioCtx();
+    if (ctx.state === 'suspended') ctx.resume();
+    const notes = [880, 1100, 880, 1100, 880];
+    alarmSoundNodes = [];
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const start = ctx.currentTime + i * 0.25;
+      gain.gain.setValueAtTime(0, start);
+      gain.gain.linearRampToValueAtTime(0.4, start + 0.05);
+      gain.gain.linearRampToValueAtTime(0, start + 0.22);
+      osc.start(start); osc.stop(start + 0.25);
+      alarmSoundNodes.push(osc);
+    });
+    // Repetir som enquanto tocando
+    return setInterval(() => {
+      try {
+        const c = getAudioCtx();
+        if (c.state === 'suspended') c.resume();
+        const o = c.createOscillator();
+        const g = c.createGain();
+        o.connect(g); g.connect(c.destination);
+        o.type = 'sine'; o.frequency.value = 990;
+        g.gain.setValueAtTime(0.4, c.currentTime);
+        g.gain.linearRampToValueAtTime(0, c.currentTime + 0.8);
+        o.start(c.currentTime); o.stop(c.currentTime + 0.9);
+      } catch(e){}
+    }, 1000);
+  } catch(e) { return null; }
+}
+
+let alarmInterval = null;
+let vibrInterval = null;
+
+function triggerAlarmUI(alarm) {
+  const h = alarm.hour, m = alarm.min, label = alarm.label;
+  document.getElementById('ring-time').textContent = h + ':' + m;
+  document.getElementById('ring-label').textContent = label;
+  document.getElementById('alarm-ringing').classList.add('open');
+  alarmRingingId = alarm.id;
+  // Som
+  if (alarmInterval) clearInterval(alarmInterval);
+  alarmInterval = playAlarmSound();
+  // Vibração (suportada em Android)
+  if ('vibrate' in navigator) {
+    const vPat = [500,300,500,300,500,300,500];
+    navigator.vibrate(vPat);
+    vibrInterval = setInterval(() => navigator.vibrate(vPat), 3000);
+  }
+  // Notificação visual também
+  if ('Notification' in window && Notification.permission === 'granted') {
+    new Notification('⏰ ' + label, {body: 'Carlos, hora de: ' + label, requireInteraction: true});
+  }
+}
+
+function stopAlarm() {
+  document.getElementById('alarm-ringing').classList.remove('open');
+  if (alarmInterval) { clearInterval(alarmInterval); alarmInterval = null; }
+  if (vibrInterval) { clearInterval(vibrInterval); vibrInterval = null; }
+  if ('vibrate' in navigator) navigator.vibrate(0);
+  alarmRingingId = null;
+}
+
+function snoozeAlarm() {
+  stopAlarm();
+  // Adiciona alarme temporário +5min
+  const now = new Date();
+  now.setMinutes(now.getMinutes() + 5);
+  const sh = String(now.getHours()).padStart(2,'0');
+  const sm = String(now.getMinutes()).padStart(2,'0');
+  state.alarms.push({id: Date.now(), hour: sh, min: sm, label: '💤 Soneca', on: true, snooze: true});
+  save(); initAlarm();
+}
+
+function checkAlarmPermission() {
+  const banner = document.getElementById('alarm-perm-banner');
+  if (!banner) return;
+  if (!('Notification' in window) || Notification.permission === 'granted') {
+    banner.classList.remove('show');
+  } else {
+    banner.classList.add('show');
+    banner.onclick = () => {
+      Notification.requestPermission().then(p => {
+        if (p === 'granted') banner.classList.remove('show');
+      });
+    };
+  }
+}
+
+function initAlarm() {
+  const list = document.getElementById('alarm-list');
+  list.innerHTML = '';
+  checkAlarmPermission();
+  if (!state.alarms || state.alarms.length === 0) {
+    list.innerHTML = '<div style="text-align:center;color:var(--muted);font-size:13px;padding:24px 0">Nenhum alarme ainda.<br>Adicione seu primeiro alarme abaixo! ⏰</div>';
+    return;
+  }
+  state.alarms.forEach(al => {
+    const div = document.createElement('div');
+    div.className = 'alarm-item';
+    div.innerHTML = `
+      <div class="alarm-info">
+        <div class="alarm-time">${al.hour}:${al.min}</div>
+        <div class="alarm-label">${al.label}${al.snooze ? ' · <span style="color:var(--accent3)">temporário</span>' : ''}</div>
+      </div>
+      <div class="alarm-toggle ${al.on ? 'on' : ''}" onclick="toggleAlarm(${al.id})" title="${al.on ? 'Desligar' : 'Ligar'}"></div>
+      <button class="alarm-del" onclick="deleteAlarm(${al.id})" title="Deletar">🗑</button>
+    `;
+    list.appendChild(div);
+  });
+}
+
+function toggleAlarm(id) {
+  const a = state.alarms.find(x => x.id === id);
+  if (a) { a.on = !a.on; save(); initAlarm(); }
+}
+
+function deleteAlarm(id) {
+  state.alarms = state.alarms.filter(x => x.id !== id);
+  save(); initAlarm();
+}
+
+function openAlarmModal() { document.getElementById('alarm-modal').classList.add('open'); }
+function closeAlarmModal() { document.getElementById('alarm-modal').classList.remove('open'); }
+function saveAlarm() {
+  const h = String(document.getElementById('alarm-hour').value).padStart(2,'0');
+  const m = String(document.getElementById('alarm-min').value).padStart(2,'0');
+  const label = document.getElementById('alarm-label-input').value || 'Alarme';
+  state.alarms.push({id: Date.now(), hour: h, min: m, label, on: true});
+  document.getElementById('alarm-label-input').value = '';
+  save(); closeAlarmModal(); initAlarm();
+}
+
+// ─── AMBER ───
+function initAmber() {
+  const days=['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];
+  const week=new Date().toISOString().substring(0,10);
+  const container=document.getElementById('post-days');
+  container.innerHTML='';
+  days.forEach((d,i)=>{
+    const key=week+'_'+i, posted=state.postDays[key];
+    const btn=document.createElement('div');
+    btn.style.cssText=`flex:1;aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;font-weight:600;border:1px solid ${posted?'var(--accent2)':'var(--border)'};background:${posted?'rgba(92,207,176,.2)':'var(--bg3)'};color:${posted?'var(--accent2)':'var(--muted)'};`;
+    btn.textContent=d;
+    btn.onclick=()=>{state.postDays[key]=!state.postDays[key];if(state.postDays[key])state.amberPosts=(state.amberPosts||0)+1;save();initAmber();};
+    container.appendChild(btn);
+  });
+  document.getElementById('amb-followers').textContent=state.amberFollowers;
+  document.getElementById('amb-posts').textContent=state.amberPosts||0;
+  document.getElementById('amb-followers-input').value=state.amberFollowers||'';
+  document.getElementById('clients-input').value=state.clients||'';
+
+  const videos=[
+    {icon:'💃',name:'Dancinhas com filtro gamer/neon',time:'7–15 segundos'},
+    {icon:'🎮',name:'POV: você é gamer',time:'Trends + áudio viral'},
+    {icon:'📦',name:'Unboxing produto gamer',time:'TikTok Shop futuro'},
+    {icon:'🎵',name:'Collab com áudios virais',time:'Você já faz isso!'},
+    {icon:'💬',name:'Amber respondendo comment',time:'Cria proximidade'},
+  ];
+  const vt=document.getElementById('video-types');
+  vt.innerHTML='';
+  videos.forEach(v=>{
+    const div=document.createElement('div');
+    div.style.cssText='display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px;margin-bottom:7px;';
+    div.innerHTML=`<span style="font-size:22px">${v.icon}</span><div><div style="font-size:13px;font-weight:500">${v.name}</div><div style="font-size:11px;color:var(--muted)">${v.time}</div></div>`;
+    vt.appendChild(div);
+  });
+}
+
+function saveMetrics() {
+  const f = parseInt(document.getElementById('amb-followers-input').value)||0;
+  const c = parseInt(document.getElementById('clients-input').value)||0;
+  state.amberFollowers=f; state.clients=c;
+  save(); initDash(); initAmber();
+  // Visual feedback
+  const btn = event.target;
+  btn.textContent='✅ Salvo!';
+  setTimeout(()=>btn.textContent='Salvar métricas',1500);
+}
+
+// ─── CLOCK ───
+function liveClock() {
+  const now=new Date();
+  const h=String(now.getHours()).padStart(2,'0');
+  const m=String(now.getMinutes()).padStart(2,'0');
+  const s=String(now.getSeconds()).padStart(2,'0');
+  const el=document.getElementById('live-clock');
+  if(el) el.textContent=h+':'+m+':'+s;
+  const days=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const months=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  const de=document.getElementById('live-date');
+  if(de) de.textContent=days[now.getDay()]+', '+now.getDate()+' '+months[now.getMonth()]+' '+now.getFullYear();
+  // alarm check — dispara no segundo 00 e 01 (segurança)
+  if (s === '00' || s === '01') {
+    state.alarms.filter(a => a.on).forEach(a => {
+      if (a.hour === h && a.min === m && alarmRingingId !== a.id) {
+        triggerAlarmUI(a);
+        // Remove snooze automático após disparar
+        if (a.snooze) {
+          setTimeout(() => { state.alarms = state.alarms.filter(x => x.id !== a.id); save(); initAlarm(); }, 2000);
+        }
+      }
+    });
+  }
+}
+
+// ─── SETTINGS RESTORE ───
+function restoreSettings() {
+  if(state.sbUrl) document.getElementById('sb-url').value=state.sbUrl;
+  if(state.sbKey) document.getElementById('sb-key').value=state.sbKey;
+  if(state.openaiKey) document.getElementById('openai-key').value=state.openaiKey;
+  if(state.abacusKey) document.getElementById('abacus-key').value=state.abacusKey;
+  if(state.abacusDeployment) document.getElementById('abacus-deployment').value=state.abacusDeployment;
+  selectAI(state.aiProvider||'openai');
+}
+
+function refreshAll() {
+  initDash(); initCalendar(); initAlarm(); initAmber(); restoreSettings();
+}
+
+// ─── CHAT INPUT AUTO-RESIZE ───
+document.addEventListener('DOMContentLoaded',()=>{
+  const ci=document.getElementById('chat-input');
+  if(ci){
+    ci.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}});
+    ci.addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,110)+'px';});
+  }
+});
+
+// ─── INIT ───
+if('Notification' in window && Notification.permission==='default') {
+  Notification.requestPermission().then(() => checkAlarmPermission());
+}
+
+// Registrar Service Worker (torna o app instalável e funciona offline)
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').then(reg => {
+    console.log('SW registrado:', reg.scope);
+    // Recebe mensagem de soneca do SW
+    navigator.serviceWorker.addEventListener('message', e => {
+      if (e.data && e.data.type === 'SNOOZE') snoozeAlarm();
+    });
+  }).catch(err => console.log('SW erro:', err));
+}
+refreshAll();
+if(state.sbUrl && state.sbKey) initSupabase();
+setupChat();
+setInterval(liveClock,1000);
+liveClock();
+</script>
+</body>
+</html>
